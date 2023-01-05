@@ -33,6 +33,12 @@ return require('packer').startup(function(use)
 	use 'zaki/zazen'
 	use 'zefei/simple-dark'
 
+	-- gitsigns
+	use {
+    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+    config = function() require('gitsigns').setup() end
+  }
+
 	-- git wrapper
 	use 'tpope/vim-fugitive'
 

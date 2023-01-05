@@ -23,7 +23,6 @@ vim.o.relativenumber = true
 vim.o.ruler = true -- Always show current position
 vim.o.sessionoptions = 'blank,curdir,folds,tabpages,winsize,winpos,terminal'
 vim.o.shiftwidth = 2
--- vim.o.shortmess:append({ c = true }) -- don't give |ins-completion-menu| messages.
 vim.o.showcmd = true -- show command in bottom bar
 vim.o.showmatch = true -- Show matching brackets when text indicator is over them
 vim.o.signcolumn = "yes" -- always show signcolumns
