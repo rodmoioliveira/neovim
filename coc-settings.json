@@ -1,0 +1,17 @@
+{
+  "coc.preferences.formatOnSave": false,
+
+  "diagnostic.displayByAle": true,
+
+  "suggest.timeout": 2000,
+
+  "toml.debug": true,
+  "toml.enabled": true,
+
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+
+  "yaml.enable": true,
+  "yaml.format.enable": true,
+  "yaml.validate": true
+}
