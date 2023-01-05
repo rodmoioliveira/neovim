@@ -3,7 +3,7 @@ require("lsp")
 require("settings")
 require("mappings")
 require("coc")
-require("gitsigns")
+require("git")
 require('wlsample.airline')
 
 vim.cmd('colorscheme bow-wob')

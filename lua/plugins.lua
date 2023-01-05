@@ -55,18 +55,26 @@ return require('packer').startup(function(use)
 	use 'Yggdroot/indentLine'
 
 	-- Coc is an intellisense engine for vim8 & neovim.
-	use {'neoclide/coc.nvim', branch = 'release'}
+	use { 'neoclide/coc.nvim', branch = 'release' }
 
 	-- MarkdownPreview
 	use({
-			'iamcco/markdown-preview.nvim',
-			run = 'cd app && yarn install',
-			setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
-			ft = { 'markdown' }
-		})
+		'iamcco/markdown-preview.nvim',
+		run = 'cd app && yarn install',
+		setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+		ft = { 'markdown' }
+	})
 
 	-- Linter
-	use 'dense-analysis/ale'
+	-- use 'dense-analysis/ale'
+
+	use {
+		'dense-analysis/ale',
+		ft = { 'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex', 'rust', 'javascript',
+			'lua' },
+		cmd = 'ALEEnable',
+		config = 'vim.cmd[[ALEEnable]]'
+	}
 
 	-- Auto Pair
 	use 'jiangmiao/auto-pairs'
@@ -84,7 +92,7 @@ return require('packer').startup(function(use)
 	use 'etdev/vim-hexcolor'
 
 	-- fzf fuzzy finder - https://github.com/junegunn/fzf
-	use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
+	use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
 
 	-- https://github.com/junegunn/fzf.vim
 	use 'junegunn/fzf.vim'

@@ -22,6 +22,8 @@ require('mason-lspconfig').setup_handlers({
   end,
 })
 
+lspconfig.bashls.setup {}
+
 lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
@@ -31,7 +33,7 @@ lspconfig.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
@@ -40,4 +42,3 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
-
