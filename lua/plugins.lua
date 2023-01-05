@@ -35,9 +35,9 @@ return require('packer').startup(function(use)
 
 	-- gitsigns
 	use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
+		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+		config = function() require('gitsigns').setup() end
+	}
 
 	-- git wrapper
 	use 'tpope/vim-fugitive'
@@ -97,44 +97,6 @@ return require('packer').startup(function(use)
 
 	-- LSP
 	use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig'
-  use 'neovim/nvim-lspconfig'
-
-	-- Lightline
-	vim.cmd([[
-	if !has('gui_running')
-		set t_Co=256
-	endif
-
-	let g:lightline = {
-				\ 'tabline': {
-				\   'left': [ [ 'tabs' ] ],
-				\   'right': [ ]
-				\ },
-				\ 'colorscheme': 'simpleblack',
-				\ 'active': {
-				\   'left': [ [ 'mode', 'paste' ],
-				\             [ 'readonly', 'filename', 'modified' ] ],
-				\   'right': [ [ 'lineinfo' ],
-				\              [ 'percent' ],
-				\              [ 'fileencoding', 'filetype' ] ],
-				\ },
-				\ 'component_function': {
-				\   'filename': 'LightlineFilename'
-				\ },
-				\ }
-
-		function! LightlineFilename()
-			return expand('%:t') !=# '' ? @% : '[No Name]'
-		endfunction
-
-		" Prettier format file
-		command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-		" Use `:F` to format current buffer
-		command! -nargs=0 F :call CocAction('format')
-
-		" YAML file support
-		autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	]])
+	use 'williamboman/mason-lspconfig'
+	use 'neovim/nvim-lspconfig'
 end)
