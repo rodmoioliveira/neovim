@@ -54,9 +54,6 @@ return require('packer').startup(function(use)
 	-- This plugin is used for displaying thin vertical lines at each indentation
 	use 'Yggdroot/indentLine'
 
-	-- GUI enhancements
-	use 'itchyny/lightline.vim'
-
 	-- Coc is an intellisense engine for vim8 & neovim.
 	use {'neoclide/coc.nvim', branch = 'release'}
 
@@ -99,4 +96,5 @@ return require('packer').startup(function(use)
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig'
 	use 'neovim/nvim-lspconfig'
+	use 'windwp/windline.nvim'
 end)
