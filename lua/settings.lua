@@ -36,7 +36,8 @@ vim.o.timeoutlen = 500
 vim.o.updatetime = 300 -- You will have bad experience for diagnostic messages when it's default 4000.
 vim.o.visualbell = false
 vim.o.whichwrap = "b,s,<,>,h,l"
-vim.o.wildignore = "*/node_modules/*,*/tmp/*,tags,*.jpg,*.png,*.pyc,*.min.js,*/dist/*,*/json/*,*/csv/*,*/target/*,node_modules,*.json,*.csv,*.txt,*.tsv"
+vim.o.wildignore =
+    "*/node_modules/*,*/tmp/*,tags,*.jpg,*.png,*.pyc,*.min.js,*/dist/*,*/json/*,*/csv/*,*/target/*,node_modules,*.json,*.csv,*.txt,*.tsv"
 vim.o.wildmenu = true -- visual autocomplete for command menu
 vim.o.wrap = true
 vim.o.writebackup = false -- Some servers have issues with backup files, see #649

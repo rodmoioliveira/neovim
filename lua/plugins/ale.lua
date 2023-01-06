@@ -8,7 +8,7 @@ vim.g.ale_sign_column_always = 1
 vim.g.ale_sign_error = '__'
 vim.g.ale_sign_warning = '--'
 
-vim.cmd[[
+vim.cmd [[
 let g:ale_linters = {
   \     'sh': ['language_server', 'bashate', 'cspell', 'shell', 'shellcheck'],
   \     'clojure': ['clj-kondo', 'joker'],

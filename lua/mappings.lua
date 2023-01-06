@@ -1,5 +1,5 @@
 local keyset = vim.keymap.set
-local opts = { noremap = true }
+local opts = {noremap = true}
 
 keyset('n', '<s-right>', ':tabnext<CR>', opts) -- Next tab
 keyset('n', '<s-left>', ':tabprevious<CR>', opts) -- Prev tabs
