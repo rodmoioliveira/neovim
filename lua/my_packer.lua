@@ -67,7 +67,7 @@ return require('packer').startup(function(use)
         'dense-analysis/ale',
         ft = {
             'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown',
-            'racket', 'vim', 'tex', 'rust', 'javascript', 'lua'
+            'racket', 'vim', 'tex', 'rust', 'javascript', 'lua', 'python'
         },
         cmd = 'ALEEnable',
         config = 'vim.cmd[[ALEEnable]]'

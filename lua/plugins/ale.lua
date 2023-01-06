@@ -17,6 +17,13 @@ keyset("n", "]x", "<Plug>(ale_next_wrap)", {silent=true})
 keyset("n", "[x", "<Plug>(ale_previous_wrap)", {silent=true})
 
 vim.cmd [[
+  let g:ale_fixers = {
+  \   'javascript': ['eslint'],
+  \   'python': ['autopep8'],
+  \}
+]]
+
+vim.cmd [[
 augroup ale_signs_colors
   autocmd!
   autocmd ColorScheme * highlight ALEInfoSign    ctermfg=9 ctermbg=15 guifg=grey100 guibg=NONE
