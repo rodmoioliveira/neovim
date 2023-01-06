@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
     use 'djoshea/vim-autoread'
 
     -- Color hex
-    use 'etdev/vim-hexcolor'
+    use 'norcalli/nvim-colorizer.lua'
 
     -- fzf fuzzy finder - https://github.com/junegunn/fzf
     use {'junegunn/fzf', dir = '~/.fzf', run = './install --all'}

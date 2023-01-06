@@ -49,3 +49,10 @@ vim.cmd([[
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
   augroup END
 ]])
+
+-- https://stefan.magnuson.co/posts/2019-04-15-improving-vim-neovim-rendering-performance/
+vim.cmd([[
+  set regexpengine=1
+  set ttyfast
+  set lazyredraw
+]])

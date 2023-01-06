@@ -13,5 +13,8 @@
 
   "yaml.enable": true,
   "yaml.format.enable": true,
-  "yaml.validate": true
+  "yaml.validate": true,
+
+  "rust-analyzer.restartServerOnConfigChange": true,
+  "rust-analyzer.updates.checkOnStartup": true
 }
