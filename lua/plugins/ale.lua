@@ -1,26 +1,20 @@
 vim.g.ale_disable_lsp = 1
-vim.g.ale_echo_msg_error_str = 'E'
+vim.g.ale_echo_msg_error_str = 'Error'
 vim.g.ale_echo_msg_format = '[%linter%] %s [%severity%]'
-vim.g.ale_echo_msg_warning_str = 'W'
+vim.g.ale_echo_msg_info_str = 'Info'
+vim.g.ale_echo_msg_warning_str = 'Warning'
 vim.g.ale_set_loclist = 0
 vim.g.ale_set_quickfix = 1
-vim.g.ale_sign_column_always = 1
-vim.g.ale_sign_error = '__'
-vim.g.ale_sign_warning = '--'
+vim.g.ale_sign_column_always = 0
+vim.g.ale_sign_error = '>'
+vim.g.ale_sign_info = ':'
+vim.g.ale_sign_warning = '*'
 
 vim.cmd [[
-let g:ale_linters = {
-  \     'sh': ['language_server', 'bashate', 'cspell', 'shell', 'shellcheck'],
-  \     'clojure': ['clj-kondo', 'joker'],
-  \     'proto': ['buf-lint', 'protoc-gen-lint', 'protolint']
-  \ }
-
-let g:ale_fixers = {
-  \     '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \     'javascript': ['eslint'],
-  \     'yaml': ['yamlfix'],
-  \     'yml': ['yamlfix'],
-  \     'sh': ['shfmt'],
-  \     'proto': ['buf-format', 'protolint']
-  \}
+augroup ale_signs_colors
+  autocmd!
+  autocmd ColorScheme * highlight ALEInfoSign ctermfg=9 ctermbg=15 guifg=grey100 guibg=NONE
+  autocmd ColorScheme * highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=red guibg=NONE
+  autocmd ColorScheme * highlight ALEWarningSign ctermfg=9 ctermbg=15 guifg=yellow guibg=NONE
+augroup END
 ]]

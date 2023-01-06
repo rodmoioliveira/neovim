@@ -40,9 +40,6 @@ return require('packer').startup(function(use)
         config = function() require('gitsigns').setup() end
     }
 
-    -- git wrapper
-    use 'tpope/vim-fugitive'
-
     -- vim commentary
     use 'tpope/vim-commentary'
 

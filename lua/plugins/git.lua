@@ -37,7 +37,7 @@ require('gitsigns').setup {
             linehl = 'GitSignsAddLn'
         }
     },
-    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+    signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -65,3 +65,17 @@ require('gitsigns').setup {
     },
     yadm = {enable = false}
 }
+
+vim.cmd [[
+augroup gitsigns_colors
+    autocmd!
+    autocmd ColorScheme * hi DiffAdd                 gui=none    guibg=NONE       guifg=green
+    autocmd ColorScheme * hi DiffChange              gui=none    guibg=NONE       guifg=blue
+    autocmd ColorScheme * hi DiffDelete              gui=none    guibg=NONE       guifg=red
+    autocmd ColorScheme * hi DiffText                gui=none    guibg=NONE       guifg=yellow
+    autocmd ColorScheme * hi GitSignsAdd             gui=none    guibg=NONE       guifg=green
+    autocmd ColorScheme * hi GitSignsChange          gui=none    guibg=NONE       guifg=blue
+    autocmd ColorScheme * hi GitSignsDelete          gui=none    guibg=NONE       guifg=red
+    autocmd ColorScheme * hi GitSignsUntracked       gui=none    guibg=NONE       guifg=grey69
+augroup END
+]]
