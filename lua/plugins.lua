@@ -105,4 +105,7 @@ return require('packer').startup(function(use)
 	use 'williamboman/mason-lspconfig'
 	use 'neovim/nvim-lspconfig'
 	use 'windwp/windline.nvim'
+
+	-- treesitter
+	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 end)
