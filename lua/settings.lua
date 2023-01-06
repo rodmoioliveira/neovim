@@ -19,7 +19,6 @@ vim.o.lazyredraw = true -- redraw only when we need to.
 vim.o.linebreak = true
 vim.o.mat = 2 -- How many tenths of a second to blink when matching brackets
 vim.o.number = true
-vim.o.relativenumber = true
 vim.o.ruler = true -- Always show current position
 vim.o.sessionoptions = 'blank,curdir,folds,tabpages,winsize,winpos,terminal'
 vim.o.shiftwidth = 2
@@ -42,17 +41,8 @@ vim.o.wildmenu = true -- visual autocomplete for command menu
 vim.o.wrap = true
 vim.o.writebackup = false -- Some servers have issues with backup files, see #649
 
-vim.cmd([[
-  augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-  augroup END
-]])
-
 -- https://stefan.magnuson.co/posts/2019-04-15-improving-vim-neovim-rendering-performance/
-vim.cmd([[
-  set regexpengine=1
-  set ttyfast
-  set lazyredraw
-]])
+vim.o.relativenumber = true
+vim.o.regexpengine = 1
+vim.o.ttyfast = true
+vim.o.lazyredraw = true

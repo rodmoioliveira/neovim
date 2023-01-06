@@ -16,5 +16,5 @@
   "yaml.validate": true,
 
   "rust-analyzer.restartServerOnConfigChange": true,
-  "rust-analyzer.updates.checkOnStartup": true
+  "rust-analyzer.updates.checkOnStartup": false
 }
