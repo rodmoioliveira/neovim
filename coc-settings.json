@@ -1,7 +1,7 @@
 {
   "coc.preferences.formatOnSave": false,
 
-  "diagnostic.displayByAle": true,
+  "diagnostic.enableHighlightLineNumber": false,
 
   "suggest.timeout": 2000,
 

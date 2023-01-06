@@ -42,6 +42,12 @@ vim.api.nvim_create_autocmd("CursorHold", {
     desc = "Highlight symbol under cursor on CursorHold"
 })
 
+
+-- Use `[x` and `]x` to navigate diagnostics
+-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+keyset("n", "[x", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keyset("n", "]x", "<Plug>(coc-diagnostic-next)", {silent = true})
+
 -- Setup formatexpr specified filetype(s)
 vim.api.nvim_create_autocmd("FileType", {
     group = "CocGroup",
@@ -67,5 +73,13 @@ vim.api.nvim_create_user_command("F", "call CocAction('format')", {})
 -- provide custom statusline: lightline.vim, vim-airline
 vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
--- We are using ALE for that.
-vim.b.coc_diagnostic_disable=true
+-- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
+vim.cmd [[
+augroup coc_diagnostic_colors
+    autocmd!
+    autocmd ColorScheme * hi DiagnosticSignError  ctermfg=9 ctermbg=15 guifg=red      guibg=NONE
+    autocmd ColorScheme * hi DiagnosticSignWarn   ctermfg=9 ctermbg=15 guifg=orange   guibg=NONE
+    autocmd ColorScheme * hi DiagnosticSignInfo   ctermfg=9 ctermbg=15 guifg=grey100  guibg=NONE
+    autocmd ColorScheme * hi DiagnosticSignHint   ctermfg=9 ctermbg=15 guifg=grey100  guibg=NONE
+augroup END
+]]
