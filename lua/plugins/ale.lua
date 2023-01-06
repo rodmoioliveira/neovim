@@ -10,6 +10,12 @@ vim.g.ale_sign_error = '>'
 vim.g.ale_sign_info = ':'
 vim.g.ale_sign_warning = '*'
 
+local keyset = vim.keymap.set
+
+-- Use `[x` and `]x` to navigate diagnostics
+keyset("n", "]x", "<Plug>(ale_next_wrap)", {silent=true})
+keyset("n", "[x", "<Plug>(ale_previous_wrap)", {silent=true})
+
 vim.cmd [[
 augroup ale_signs_colors
   autocmd!
