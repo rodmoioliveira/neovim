@@ -1,0 +1,352 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.018  000.018: --- NVIM STARTING ---
+001.126  001.109: locale set
+002.404  001.277: inits 1
+002.450  000.046: window checked
+003.817  001.368: parsing arguments
+013.756  009.939: init lua interpreter
+014.291  000.535: expanding arguments
+014.325  000.034: inits 2
+015.463  001.138: init highlight
+015.468  000.005: waiting for UI
+017.001  001.533: done waiting for UI
+017.022  000.022: init screen for UI
+017.065  000.043: init default mappings
+017.113  000.048: init default autocommands
+018.606  000.186  000.186: sourcing /usr/share/nvim/runtime/ftplugin.vim
+019.004  000.213  000.213: sourcing /usr/share/nvim/runtime/indent.vim
+055.289  001.981  001.981: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-bow-wob/colors/bow-wob.vim
+060.239  041.134  039.153: sourcing /home/rodolfo-oliveira/.config/nvim/init.lua
+060.249  001.603: sourcing vimrc file(s)
+060.916  000.035  000.035: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/filetype.vim
+065.651  000.067  000.067: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/ftdetect/polyglot.vim
+065.845  004.913  004.846: sourcing /usr/share/nvim/runtime/filetype.vim
+066.055  000.078  000.078: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/ftdetect/polyglot.vim
+077.227  016.719  011.693: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/autoload/polyglot/init.vim
+077.254  016.864  000.145: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/filetype.vim
+077.431  000.147  000.147: sourcing /usr/share/nvim/runtime/filetype.lua
+077.489  000.043  000.043: sourcing /usr/share/nvim/runtime/filetype.vim
+078.225  000.111  000.111: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+078.315  000.783  000.672: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+079.532  000.827  000.827: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/plugin/polyglot.vim
+079.881  000.213  000.213: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+079.940  000.044  000.044: sourcing /usr/share/nvim/runtime/plugin/health.vim
+080.074  000.120  000.120: sourcing /usr/share/nvim/runtime/plugin/man.vim
+080.615  000.307  000.307: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+080.789  000.701  000.394: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+081.011  000.201  000.201: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+081.557  000.527  000.527: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+081.725  000.028  000.028: sourcing /home/rodolfo-oliveira/.local/share/nvim/rplugin.vim
+081.741  000.166  000.138: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+081.878  000.125  000.125: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+081.940  000.048  000.048: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+082.107  000.154  000.154: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+082.230  000.110  000.110: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+082.279  000.033  000.033: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+082.486  000.194  000.194: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+085.188  002.636  002.636: sourcing /home/rodolfo-oliveira/.config/nvim/plugin/packer_compiled.lua
+085.362  001.175: loading rtp plugins
+086.061  000.508  000.508: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/auto-pairs/plugin/auto-pairs.vim
+086.428  000.137  000.137: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/rpc.vim
+086.857  000.337  000.337: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/util.vim
+087.228  000.200  000.200: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/client.vim
+089.297  003.136  002.462: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/plugin/coc.vim
+090.182  000.774  000.774: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+091.070  000.799  000.799: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/fzf.vim/plugin/fzf.vim
+091.293  000.066  000.066: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua/plugin/colorizer.vim
+092.179  000.800  000.800: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.lua
+092.317  000.067  000.067: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+092.505  000.121  000.121: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-autoread/plugin/autoread.vim
+093.046  000.467  000.467: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-better-whitespace/plugin/better-whitespace.vim
+093.452  000.314  000.314: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-closetag/plugin/closetag.vim
+093.683  000.155  000.155: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-commentary/plugin/commentary.vim
+094.056  000.299  000.299: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-gutentags/plugin/gutentags.vim
+094.293  000.153  000.153: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/plugin/polyglot.vim
+094.426  001.406: loading packages
+094.895  000.430  000.430: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/indentLine/after/plugin/indentLine.vim
+094.948  000.092: loading after plugins
+094.959  000.011: inits 3
+104.858  009.899: reading ShaDa
+105.615  000.270  000.270: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/autoload/polyglot/shebang.vim
+106.416  000.389  000.389: sourcing /usr/share/nvim/runtime/scripts.vim
+107.965  000.856  000.856: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/autoload/polyglot/sleuth.vim
+116.937  000.101  000.101: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+118.008  000.142  000.142: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+118.057  000.029  000.029: sourcing /usr/share/nvim/runtime/indent/lua.vim
+121.671  000.703  000.703: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+121.734  000.031  000.031: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+124.152  000.141  000.141: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/events.vim
+124.665  002.128  001.987: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/plugin/ale.vim
+124.961  000.083  000.083: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/toggle.vim
+125.961  000.446  000.446: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-gutentags/autoload/gutentags.vim
+126.554  000.264  000.264: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-gutentags/autoload/gutentags/ctags.vim
+129.440  000.160  000.160: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+130.650  000.076  000.076: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+130.711  000.027  000.027: sourcing /usr/share/nvim/runtime/indent/lua.vim
+131.745  000.630  000.630: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+131.824  000.034  000.034: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+142.188  000.285  000.285: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale.vim
+142.773  000.385  000.385: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/util.vim
+143.337  000.321  000.321: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/linter.vim
+143.880  000.057  000.057: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/handlers/cspell.vim
+144.128  000.459  000.402: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/cspell.vim
+144.367  000.220  000.220: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/luac.vim
+144.631  000.246  000.246: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/luacheck.vim
+144.889  000.239  000.239: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/selene.vim
+145.258  000.077  000.077: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/engine/ignore.vim
+145.890  000.373  000.373: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/engine.vim
+146.345  000.262  000.262: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/command.vim
+147.010  000.319  000.319: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/path.vim
+147.698  000.093  000.093: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/history.vim
+148.669  000.217  000.217: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/job.vim
+151.968  037.244: reading stdin
+152.186  000.218: making tab pages
+152.675  000.201  000.201: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/cursor.vim
+154.495  002.107: opening buffers
+162.384  007.889: BufEnter autocommands
+171.284  000.114  000.114: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+172.293  000.087  000.087: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+172.373  000.053  000.053: sourcing /usr/share/nvim/runtime/indent/lua.vim
+174.259  000.627  000.627: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+174.351  000.043  000.043: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+188.660  000.106  000.106: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+189.660  000.077  000.077: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+189.726  000.045  000.045: sourcing /usr/share/nvim/runtime/indent/lua.vim
+191.734  000.921  000.921: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+191.863  000.056  000.056: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+206.425  000.118  000.118: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+207.517  000.109  000.109: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+207.589  000.050  000.050: sourcing /usr/share/nvim/runtime/indent/lua.vim
+209.473  000.628  000.628: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+209.542  000.031  000.031: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+223.555  000.109  000.109: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+224.546  000.064  000.064: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+224.594  000.027  000.027: sourcing /usr/share/nvim/runtime/indent/lua.vim
+226.371  000.579  000.579: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+226.433  000.024  000.024: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+247.732  000.120  000.120: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+248.724  000.068  000.068: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+248.780  000.034  000.034: sourcing /usr/share/nvim/runtime/indent/lua.vim
+250.886  000.702  000.702: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+250.996  000.042  000.042: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+265.477  000.112  000.112: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+266.499  000.077  000.077: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+266.544  000.023  000.023: sourcing /usr/share/nvim/runtime/indent/lua.vim
+268.651  000.672  000.672: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+268.712  000.024  000.024: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+290.315  000.134  000.134: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+291.380  000.079  000.079: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+291.431  000.028  000.028: sourcing /usr/share/nvim/runtime/indent/lua.vim
+293.592  000.730  000.730: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+293.701  000.038  000.038: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+306.328  000.086  000.086: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+307.336  000.064  000.064: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+307.378  000.021  000.021: sourcing /usr/share/nvim/runtime/indent/lua.vim
+309.626  000.628  000.628: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+309.723  000.034  000.034: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+376.816  000.168  000.168: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+378.533  000.118  000.118: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+378.617  000.046  000.046: sourcing /usr/share/nvim/runtime/indent/lua.vim
+382.010  000.888  000.888: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+382.109  000.044  000.044: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+398.536  000.095  000.095: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+399.589  000.119  000.119: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+399.689  000.078  000.078: sourcing /usr/share/nvim/runtime/indent/lua.vim
+401.926  000.773  000.773: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+402.043  000.065  000.065: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+414.400  000.091  000.091: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+415.400  000.065  000.065: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+415.448  000.026  000.026: sourcing /usr/share/nvim/runtime/indent/lua.vim
+417.817  000.656  000.656: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+417.901  000.035  000.035: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+425.220  251.985: editing files in windows
+427.296  000.482  000.482: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/highlight.vim
+428.108  000.668  000.668: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/color.vim
+432.177  005.807: VimEnter autocommands
+432.183  000.006: UIEnter autocommands
+432.185  000.002: before starting main loop
+433.052  000.186  000.186: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc.vim
+433.253  000.138  000.138: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/compat.vim
+433.424  000.916: first screen update
+433.427  000.002: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.015  000.015: --- NVIM STARTING ---
+000.896  000.881: locale set
+002.003  001.107: inits 1
+002.043  000.040: window checked
+003.021  000.978: parsing arguments
+013.884  010.863: init lua interpreter
+014.255  000.372: expanding arguments
+014.288  000.033: inits 2
+015.393  001.104: init highlight
+015.397  000.004: waiting for UI
+017.049  001.652: done waiting for UI
+017.066  000.017: init screen for UI
+017.117  000.050: init default mappings
+017.164  000.047: init default autocommands
+018.648  000.194  000.194: sourcing /usr/share/nvim/runtime/ftplugin.vim
+019.055  000.222  000.222: sourcing /usr/share/nvim/runtime/indent.vim
+059.026  002.003  002.003: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-bow-wob/colors/bow-wob.vim
+063.666  044.504  042.501: sourcing /home/rodolfo-oliveira/.config/nvim/init.lua
+063.677  001.592: sourcing vimrc file(s)
+064.305  000.026  000.026: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/filetype.vim
+069.098  000.070  000.070: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/ftdetect/polyglot.vim
+069.324  005.002  004.932: sourcing /usr/share/nvim/runtime/filetype.vim
+069.520  000.051  000.051: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/ftdetect/polyglot.vim
+080.216  016.287  011.207: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/autoload/polyglot/init.vim
+080.231  016.410  000.123: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/filetype.vim
+080.346  000.097  000.097: sourcing /usr/share/nvim/runtime/filetype.lua
+080.394  000.032  000.032: sourcing /usr/share/nvim/runtime/filetype.vim
+081.088  000.091  000.091: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+081.167  000.743  000.652: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+082.434  000.876  000.876: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/plugin/polyglot.vim
+082.793  000.222  000.222: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+082.850  000.042  000.042: sourcing /usr/share/nvim/runtime/plugin/health.vim
+082.990  000.125  000.125: sourcing /usr/share/nvim/runtime/plugin/man.vim
+083.453  000.230  000.230: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+083.547  000.544  000.314: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+083.729  000.168  000.168: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+084.174  000.426  000.426: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+084.335  000.028  000.028: sourcing /home/rodolfo-oliveira/.local/share/nvim/rplugin.vim
+084.351  000.160  000.132: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+084.487  000.124  000.124: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+084.537  000.037  000.037: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+084.700  000.150  000.150: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+084.819  000.106  000.106: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+084.868  000.032  000.032: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+085.058  000.177  000.177: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+087.713  002.594  002.594: sourcing /home/rodolfo-oliveira/.config/nvim/plugin/packer_compiled.lua
+087.880  001.136: loading rtp plugins
+088.679  000.613  000.613: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/auto-pairs/plugin/auto-pairs.vim
+089.101  000.189  000.189: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/rpc.vim
+089.554  000.363  000.363: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/util.vim
+089.950  000.214  000.214: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/client.vim
+092.017  003.238  002.472: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/plugin/coc.vim
+092.980  000.851  000.851: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/fzf/plugin/fzf.vim
+093.852  000.780  000.780: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/fzf.vim/plugin/fzf.vim
+094.126  000.106  000.106: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua/plugin/colorizer.vim
+095.075  000.850  000.850: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.lua
+095.214  000.069  000.069: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+095.392  000.109  000.109: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-autoread/plugin/autoread.vim
+095.921  000.456  000.456: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-better-whitespace/plugin/better-whitespace.vim
+096.333  000.320  000.320: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-closetag/plugin/closetag.vim
+096.568  000.161  000.161: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-commentary/plugin/commentary.vim
+096.958  000.316  000.316: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-gutentags/plugin/gutentags.vim
+097.260  000.188  000.188: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/plugin/polyglot.vim
+097.393  001.455: loading packages
+097.877  000.444  000.444: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/indentLine/after/plugin/indentLine.vim
+097.928  000.091: loading after plugins
+097.941  000.012: inits 3
+106.789  008.848: reading ShaDa
+107.520  000.271  000.271: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/autoload/polyglot/shebang.vim
+108.316  000.387  000.387: sourcing /usr/share/nvim/runtime/scripts.vim
+110.006  000.864  000.864: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/autoload/polyglot/sleuth.vim
+119.035  000.098  000.098: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+120.108  000.161  000.161: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+120.164  000.033  000.033: sourcing /usr/share/nvim/runtime/indent/lua.vim
+123.745  000.705  000.705: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+123.805  000.028  000.028: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+126.254  000.146  000.146: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/events.vim
+126.787  002.152  002.006: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/plugin/ale.vim
+127.070  000.087  000.087: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/toggle.vim
+128.291  000.642  000.642: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-gutentags/autoload/gutentags.vim
+129.136  000.391  000.391: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-gutentags/autoload/gutentags/ctags.vim
+133.116  000.109  000.109: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+134.492  000.097  000.097: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+134.556  000.029  000.029: sourcing /usr/share/nvim/runtime/indent/lua.vim
+136.040  000.902  000.902: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+136.135  000.033  000.033: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+148.515  000.239  000.239: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale.vim
+149.040  000.339  000.339: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/util.vim
+149.546  000.294  000.294: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/linter.vim
+150.205  000.077  000.077: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/handlers/cspell.vim
+150.470  000.541  000.463: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/cspell.vim
+150.726  000.235  000.235: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/luac.vim
+151.021  000.272  000.272: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/luacheck.vim
+151.323  000.277  000.277: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/ale_linters/lua/selene.vim
+151.676  000.079  000.079: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/engine/ignore.vim
+152.305  000.377  000.377: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/engine.vim
+152.761  000.276  000.276: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/command.vim
+153.297  000.215  000.215: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/path.vim
+153.922  000.073  000.073: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/history.vim
+154.774  000.224  000.224: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/job.vim
+157.510  040.293: reading stdin
+157.751  000.241: making tab pages
+158.281  000.194  000.194: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/opt/ale/autoload/ale/cursor.vim
+160.976  003.032: opening buffers
+168.104  007.128: BufEnter autocommands
+175.810  000.103  000.103: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+176.801  000.064  000.064: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+176.846  000.022  000.022: sourcing /usr/share/nvim/runtime/indent/lua.vim
+178.801  000.716  000.716: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+178.903  000.051  000.051: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+192.961  000.111  000.111: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+194.016  000.106  000.106: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+194.088  000.049  000.049: sourcing /usr/share/nvim/runtime/indent/lua.vim
+195.875  000.698  000.698: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+195.982  000.056  000.056: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+209.981  000.109  000.109: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+210.997  000.082  000.082: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+211.064  000.045  000.045: sourcing /usr/share/nvim/runtime/indent/lua.vim
+212.937  000.690  000.690: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+213.003  000.028  000.028: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+226.897  000.104  000.104: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+227.888  000.064  000.064: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+227.932  000.022  000.022: sourcing /usr/share/nvim/runtime/indent/lua.vim
+230.024  000.708  000.708: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+230.095  000.031  000.031: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+250.620  000.124  000.124: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+251.680  000.079  000.079: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+251.749  000.045  000.045: sourcing /usr/share/nvim/runtime/indent/lua.vim
+254.021  000.699  000.699: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+254.088  000.027  000.027: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+267.043  000.112  000.112: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+268.113  000.072  000.072: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+268.165  000.029  000.029: sourcing /usr/share/nvim/runtime/indent/lua.vim
+270.277  000.726  000.726: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+270.349  000.034  000.034: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+294.010  000.108  000.108: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+294.984  000.060  000.060: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+295.030  000.025  000.025: sourcing /usr/share/nvim/runtime/indent/lua.vim
+297.033  000.614  000.614: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+297.105  000.022  000.022: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+309.553  000.103  000.103: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+310.587  000.117  000.117: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+310.690  000.082  000.082: sourcing /usr/share/nvim/runtime/indent/lua.vim
+313.175  000.848  000.848: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+313.236  000.024  000.024: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+372.421  000.153  000.153: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+374.082  000.102  000.102: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+374.154  000.034  000.034: sourcing /usr/share/nvim/runtime/indent/lua.vim
+377.740  000.911  000.911: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+377.878  000.084  000.084: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+393.426  000.088  000.088: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+394.434  000.081  000.081: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+394.477  000.021  000.021: sourcing /usr/share/nvim/runtime/indent/lua.vim
+396.707  000.689  000.689: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+396.814  000.043  000.043: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+409.030  000.109  000.109: sourcing /usr/share/nvim/runtime/ftplugin/lua.vim
+410.093  000.108  000.108: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/indent/lua.vim
+410.167  000.052  000.052: sourcing /usr/share/nvim/runtime/indent/lua.vim
+412.652  000.722  000.722: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/vim-polyglot/syntax/lua.vim
+412.732  000.029  000.029: sourcing /usr/share/nvim/runtime/syntax/lua.vim
+420.393  241.253: editing files in windows
+422.528  000.499  000.499: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/highlight.vim
+423.276  000.609  000.609: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/color.vim
+428.703  007.202: VimEnter autocommands
+428.711  000.009: UIEnter autocommands
+428.714  000.002: before starting main loop
+430.156  000.320  000.320: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc.vim
+430.672  000.403  000.403: sourcing /home/rodolfo-oliveira/.local/share/nvim/site/pack/packer/start/coc.nvim/autoload/coc/compat.vim
+430.866  001.429: first screen update
+430.869  000.003: --- NVIM STARTED ---

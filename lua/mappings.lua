@@ -15,5 +15,5 @@ keyset("n", "<C-d>", "<C-d>zz")
 keyset("n", "<C-u>", "<C-u>zz")
 
 -- Keep cursor in the middle of the screen when serching
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+keyset("n", "n", "nzzzv")
+keyset("n", "N", "Nzzzv")

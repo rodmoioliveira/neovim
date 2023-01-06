@@ -9,5 +9,13 @@ help: ## Display this help screen
 fmt: ## Format Lua code
 	@fd . -e lua | xargs lua-format -i
 
+perf: ## Write startuptime performance file
+	@fd . -e lua | xargs nvim --startuptime perf.log -p
+
+perf-hist: ## See performance history
+	@rg 'NVIM STARTED' perf.log
+
 .PHONY: help
 .PHONY: fmt
+.PHONY: perf
+.PHONY: perf-hist

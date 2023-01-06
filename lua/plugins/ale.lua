@@ -13,8 +13,8 @@ vim.g.ale_sign_warning = '*'
 vim.cmd [[
 augroup ale_signs_colors
   autocmd!
-  autocmd ColorScheme * highlight ALEInfoSign ctermfg=9 ctermbg=15 guifg=grey100 guibg=NONE
-  autocmd ColorScheme * highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=red guibg=NONE
-  autocmd ColorScheme * highlight ALEWarningSign ctermfg=9 ctermbg=15 guifg=yellow guibg=NONE
+  autocmd ColorScheme * highlight ALEInfoSign    ctermfg=9 ctermbg=15 guifg=grey100 guibg=NONE
+  autocmd ColorScheme * highlight ALEErrorSign   ctermfg=9 ctermbg=15 guifg=red     guibg=NONE
+  autocmd ColorScheme * highlight ALEWarningSign ctermfg=9 ctermbg=15 guifg=yellow  guibg=NONE
 augroup END
 ]]
