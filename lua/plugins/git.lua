@@ -66,16 +66,17 @@ require('gitsigns').setup {
     yadm = {enable = false}
 }
 
+-- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 vim.cmd [[
 augroup gitsigns_colors
     autocmd!
-    autocmd ColorScheme * hi DiffAdd                 gui=none    guibg=NONE       guifg=green
-    autocmd ColorScheme * hi DiffChange              gui=none    guibg=NONE       guifg=blue
-    autocmd ColorScheme * hi DiffDelete              gui=none    guibg=NONE       guifg=red
+    autocmd ColorScheme * hi DiffAdd                 gui=none    guibg=NONE       guifg=DarkOliveGreen3
+    autocmd ColorScheme * hi DiffChange              gui=none    guibg=NONE       guifg=RoyalBlue1
+    autocmd ColorScheme * hi DiffDelete              gui=none    guibg=NONE       guifg=IndianRed
     autocmd ColorScheme * hi DiffText                gui=none    guibg=NONE       guifg=yellow
-    autocmd ColorScheme * hi GitSignsAdd             gui=none    guibg=NONE       guifg=green
-    autocmd ColorScheme * hi GitSignsChange          gui=none    guibg=NONE       guifg=blue
-    autocmd ColorScheme * hi GitSignsDelete          gui=none    guibg=NONE       guifg=red
+    autocmd ColorScheme * hi GitSignsAdd             gui=none    guibg=NONE       guifg=DarkOliveGreen3
+    autocmd ColorScheme * hi GitSignsChange          gui=none    guibg=NONE       guifg=RoyalBlue1
+    autocmd ColorScheme * hi GitSignsDelete          gui=none    guibg=NONE       guifg=IndianRed
     autocmd ColorScheme * hi GitSignsUntracked       gui=none    guibg=NONE       guifg=grey69
 augroup END
 ]]
