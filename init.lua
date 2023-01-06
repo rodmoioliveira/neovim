@@ -10,5 +10,5 @@ require("plugins.ale")
 vim.cmd('colorscheme bow-wob')
 vim.cmd('highlight SignColumn guibg=bow-wob')
 
-require('wlsample.airline')
+require('plugins.my_wildline')
 require("colors")

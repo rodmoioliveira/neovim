@@ -3,35 +3,35 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- Colors
-	use 'Jorengarenar/vim-darkness'
-	use 'LuRsT/austere.vim'
-	use 'LuRsT/dvo.vim'
-	use 'Michal-Miko/vim-mono-red'
-	use 'Resonious/vim-camo'
-	use 'abnt713/vim-hashpunk'
-	use 'chr4/jellygrass.vim'
-	use 'duckwork/low.vim'
-	use 'fenetikm/falcon'
-	use 'igrmk/kull-vim'
-	use 'jalvesaq/southernlights'
-	use 'jaredgorski/fogbell.vim'
-	use 'jasoncarr0/sidewalk-colorscheme'
-	use 'kyoto-shift/film-noir'
-	use 'lucasprag/simpleblack'
-	use 'marlun/vim-starwars'
+	-- use 'Jorengarenar/vim-darkness'
+	-- use 'LuRsT/austere.vim'
+	-- use 'LuRsT/dvo.vim'
+	-- use 'Michal-Miko/vim-mono-red'
+	-- use 'Resonious/vim-camo'
+	-- use 'abnt713/vim-hashpunk'
+	-- use 'chr4/jellygrass.vim'
+	-- use 'duckwork/low.vim'
+	-- use 'fenetikm/falcon'
+	-- use 'igrmk/kull-vim'
+	-- use 'jalvesaq/southernlights'
+	-- use 'jaredgorski/fogbell.vim'
+	-- use 'jasoncarr0/sidewalk-colorscheme'
+	-- use 'kyoto-shift/film-noir'
+	-- use 'lucasprag/simpleblack'
+	-- use 'marlun/vim-starwars'
 	use 'p7g/vim-bow-wob'
-	use 'rafi/awesome-vim-colorschemes'
-	use 'ryanpcmcquen/true-monochrome_vim'
-	use 'sff1019/vim-joker'
-	use 'shattered/vimcolors'
-	use 'smallwat3r/vim-simplicity'
-	use 'szorfein/fantasy.vim'
-	use 't184256/vim-boring'
-	use 'theJian/Mogao'
-	use 'tomasr/molokai'
-	use 'tudurom/bleh.vim'
-	use 'zaki/zazen'
-	use 'zefei/simple-dark'
+	-- use 'rafi/awesome-vim-colorschemes'
+	-- use 'ryanpcmcquen/true-monochrome_vim'
+	-- use 'sff1019/vim-joker'
+	-- use 'shattered/vimcolors'
+	-- use 'smallwat3r/vim-simplicity'
+	-- use 'szorfein/fantasy.vim'
+	-- use 't184256/vim-boring'
+	-- use 'theJian/Mogao'
+	-- use 'tomasr/molokai'
+	-- use 'tudurom/bleh.vim'
+	-- use 'zaki/zazen'
+	-- use 'zefei/simple-dark'
 
 	-- gitsigns
 	use {
@@ -64,9 +64,6 @@ return require('packer').startup(function(use)
 		setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
 		ft = { 'markdown' }
 	})
-
-	-- Linter
-	-- use 'dense-analysis/ale'
 
 	use {
 		'dense-analysis/ale',
@@ -104,5 +101,7 @@ return require('packer').startup(function(use)
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig'
 	use 'neovim/nvim-lspconfig'
+
+	-- windline
 	use 'windwp/windline.nvim'
 end)
