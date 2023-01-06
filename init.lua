@@ -2,6 +2,7 @@ require("my_packer")
 require("lsp")
 require("settings")
 require("mappings")
+require("search")
 
 require("plugins.coc")
 require("plugins.git")
