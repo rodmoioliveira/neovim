@@ -8,6 +8,8 @@ require('mason-lspconfig').setup({
     'tsserver',
     'bashls',
     'golangci_lint_ls',
+    'pyright',
+    'bufls',
   }
 })
 
@@ -23,6 +25,7 @@ require('mason-lspconfig').setup_handlers({
 })
 
 lspconfig.bashls.setup {}
+lspconfig.bufls.setup{}
 
 lspconfig.sumneko_lua.setup {
   settings = {
