@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.1.1](https://github.com/rodmoioliveira/neovim/compare/0.1.0...0.1.1) - 2023-01-06
+
+[4aae1c2](https://github.com/rodmoioliveira/neovim/commit/4aae1c21b026414ec6a14106169ee25fc78f1eb7)...[71fd933](https://github.com/rodmoioliveira/neovim/commit/71fd933646b7c8c4b16174d5c845c4ebddc80433)
+
+### Bug Fixes
+
+- [71fd933](https://github.com/rodmoioliveira/neovim/commit/71fd933646b7c8c4b16174d5c845c4ebddc80433) - Fix: fix CHANGELOG 
+
 ## [0.1.0](https://github.com/rodmoioliveira/neovim/compare/...0.1.0) - 2023-01-06
 
 ### Documentation
