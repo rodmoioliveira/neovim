@@ -1,6 +1,26 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.0](https://github.com/rodmoioliveira/neovim/compare/0.1.1...0.2.0) - 2023-01-06
+
+[71fd933](https://github.com/rodmoioliveira/neovim/commit/71fd933646b7c8c4b16174d5c845c4ebddc80433)...[d1ac455](https://github.com/rodmoioliveira/neovim/commit/d1ac455e55acbc53451bc1ad7dda27c9dbc5885d)
+
+### Bug Fixes
+
+- [06673c3](https://github.com/rodmoioliveira/neovim/commit/06673c3be3392de18dde2557d65b5e6a425c11c1) - Fix: set coc_diagnostic_disable=true because we are using ALE for that 
+
+### Documentation
+
+- [0995c80](https://github.com/rodmoioliveira/neovim/commit/0995c802575fbe2322ff29a16b9d59a4318ad81e) - Doc: add LICENSE 
+
+### Features
+
+- [d1ac455](https://github.com/rodmoioliveira/neovim/commit/d1ac455e55acbc53451bc1ad7dda27c9dbc5885d) - Feat: remove dense-analysis/ale 
+
+### Miscellaneous Tasks
+
+- [23f031d](https://github.com/rodmoioliveira/neovim/commit/23f031df0d45f843df5634399d6a643a74a74244) - Chore: add ale_fixers 
+
 ## [0.1.1](https://github.com/rodmoioliveira/neovim/compare/0.1.0...0.1.1) - 2023-01-06
 
 [4aae1c2](https://github.com/rodmoioliveira/neovim/commit/4aae1c21b026414ec6a14106169ee25fc78f1eb7)...[71fd933](https://github.com/rodmoioliveira/neovim/commit/71fd933646b7c8c4b16174d5c845c4ebddc80433)
