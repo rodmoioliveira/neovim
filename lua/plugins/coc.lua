@@ -18,6 +18,7 @@ local opts = {
     expr = true,
     replace_keycodes = false
 }
+
 keyset("i", "<TAB>",
        'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
        opts)

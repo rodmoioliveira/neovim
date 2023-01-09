@@ -52,8 +52,8 @@ return require('packer').startup(function(use)
     -- This plugin is used for displaying thin vertical lines at each indentation
     use 'Yggdroot/indentLine'
 
-    -- Coc is an intellisense engine for vim8 & neovim.
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- -- Coc is an intellisense engine for vim8 & neovim.
+    -- use {'neoclide/coc.nvim', branch = 'release'}
 
     -- MarkdownPreview
     use({
@@ -91,6 +91,28 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig'
     use 'neovim/nvim-lspconfig'
+
+    -- Autocomplete
+    use("onsails/lspkind-nvim")
+    use({
+      "hrsh7th/nvim-cmp",
+      requires = {
+        -- "hrsh7th/cmp-cmdline", -- command line
+        "hrsh7th/cmp-buffer", -- buffer completions
+        "hrsh7th/cmp-nvim-lua", -- nvim config completions
+        "hrsh7th/cmp-nvim-lsp", -- lsp completions
+        "hrsh7th/cmp-path", -- file path completions
+        "saadparwaiz1/cmp_luasnip", -- snippets completions
+      },
+    })
+
+    -- snippets
+    use({
+      "L3MON4D3/LuaSnip",
+      requires = {
+        "rafamadriz/friendly-snippets",
+      },
+    })
 
     -- tabline
     use {
