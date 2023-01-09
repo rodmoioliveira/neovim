@@ -4,6 +4,7 @@
   "diagnostic.enableHighlightLineNumber": false,
 
   "suggest.timeout": 2000,
+  "suggest.noselect": true,
 
   "toml.debug": true,
   "toml.enabled": true,
