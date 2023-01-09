@@ -55,6 +55,9 @@ vim.o.whichwrap = "b,s,<,>,h,l,[,]"
 vim.o.wildmenu = true -- visual autocomplete for command menu
 vim.o.wrap = true
 vim.o.writebackup = false -- Some servers have issues with backup files, see #649
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
 vim.opt.shortmess:append "I" -- don't show the default intro message
 vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
 vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)

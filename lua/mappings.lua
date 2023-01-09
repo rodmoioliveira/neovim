@@ -6,7 +6,7 @@ keyset('n', '<s-right>', ':tabnext<CR>',
        {noremap = true, unique = true, silent = false}) -- Next tab
 keyset('n', '<s-left>', ':tabprevious<CR>',
        {noremap = true, unique = true, silent = false}) -- Prev tabs
-keyset('n', '<space>', ':nohlsearch<CR>',
+keyset('n', '<leader>h', ':nohlsearch<CR>',
        {noremap = true, unique = true, silent = false}) -- Space remove highlight serch
 
 -- gitsigns
@@ -35,4 +35,8 @@ keyset("n", "<leader>s", ":source<CR>",
 
 -- [S]plit line (sister to [J]oin lines) S is covered by cc.
 keyset("n", "S", "mzi<CR><ESC>`z",
+       {noremap = true, unique = true, silent = false})
+
+-- Format code
+keyset("n", "<leader>f", ":Format<CR>",
        {noremap = true, unique = true, silent = false})

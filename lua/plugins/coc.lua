@@ -66,7 +66,6 @@ vim.api.nvim_create_autocmd("User", {
 
 -- Add `:Format` command to format current buffer
 vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
-vim.api.nvim_create_user_command("F", "call CocAction('format')", {})
 
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 vim.cmd [[
