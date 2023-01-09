@@ -44,3 +44,27 @@ keyset("n", "<leader>f", ":Format<CR>",
 -- Toggle list
 keyset("n", "<leader>l", ":set list!<CR>",
        {noremap = true, unique = true, silent = false})
+
+-- Packer Sync
+keyset("n", "<leader>py", ":PackerSync<CR>",
+       {noremap = true, unique = true, silent = false})
+
+-- Packer Status
+keyset("n", "<leader>ps", ":PackerStatus<CR>",
+       {noremap = true, unique = true, silent = false})
+
+-- Packer Clean
+keyset("n", "<leader>pl", ":PackerClean<CR>",
+       {noremap = true, unique = true, silent = false})
+
+-- Packer Compile
+keyset("n", "<leader>po", ":PackerCompile<CR>",
+       {noremap = true, unique = true, silent = false})
+
+-- Packer Update
+keyset("n", "<leader>pu", ":PackerUpdate<CR>",
+       {noremap = true, unique = true, silent = false})
+
+-- Packer Install
+keyset("n", "<leader>pi", ":PackerInstall<UpdateCR>",
+       {noremap = true, unique = true, silent = false})
