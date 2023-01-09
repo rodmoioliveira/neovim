@@ -43,14 +43,11 @@ return require('packer').startup(function(use)
     -- vim commentary
     use 'tpope/vim-commentary'
 
-    -- A solid language pack for Vim.
-    use 'sheerun/vim-polyglot'
-
     -- A tree explorer plugin for vim.
     use 'ntpeters/vim-better-whitespace'
 
     -- This plugin is used for displaying thin vertical lines at each indentation
-    use 'Yggdroot/indentLine'
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Coc is an intellisense engine for vim8 & neovim.
     use {'neoclide/coc.nvim', branch = 'release'}
