@@ -64,10 +64,10 @@ return require('packer').startup(function(use)
     })
 
     -- Auto Pair
-    use 'jiangmiao/auto-pairs'
-
-    -- Closetag
-    use 'alvan/vim-closetag'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
     -- Autogenerate tags
     use 'ludovicchabant/vim-gutentags'
@@ -96,12 +96,5 @@ return require('packer').startup(function(use)
     use {
         'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
-
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            require("which-key").setup {}
-        end
     }
 end)
