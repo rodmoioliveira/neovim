@@ -12,6 +12,7 @@ end
 -- NOTE: Use command ':verbose imap <tab>' to make sure Tab is not mapped by
 -- other plugins before putting this into your config
 local opts = {
+    unique = true,
     silent = true,
     noremap = true,
     expr = true,
@@ -41,7 +42,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
     command = "silent call CocActionAsync('highlight')",
     desc = "Highlight symbol under cursor on CursorHold"
 })
-
 
 -- Use `[x` and `]x` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
