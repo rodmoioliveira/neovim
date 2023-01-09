@@ -68,11 +68,6 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
 vim.api.nvim_create_user_command("F", "call CocAction('format')", {})
 
--- Add (Neo)Vim's native statusline support
--- NOTE: Please see `:h coc-status` for integrations with external plugins that
--- provide custom statusline: lightline.vim, vim-airline
-vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
-
 -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
 vim.cmd [[
 augroup coc_diagnostic_colors
