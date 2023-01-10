@@ -3,7 +3,6 @@ require("lsp")
 require("mappings")
 require("search")
 
-require("plugins.coc")
 require("plugins.git")
 require("plugins.better-whitespace")
 require("plugins.indentline")

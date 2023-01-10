@@ -9,7 +9,7 @@ keyset('n', '<s-left>', ':tabprevious<CR>',
 keyset('n', '<leader>h', ':nohlsearch<CR>',
        {noremap = true, unique = true, silent = false}) -- Space remove highlight serch
 
--- gitsigns
+-- Gitsigns
 keyset('n', '[g', ':Gitsigns next_hunk<CR>',
        {noremap = true, unique = true, silent = false}) -- Next git change
 keyset('n', ']g', ':Gitsigns prev_hunk<CR>',
@@ -37,10 +37,6 @@ keyset("n", "<leader>s", ":source<CR>",
 keyset("n", "S", "mzi<CR><ESC>`z",
        {noremap = true, unique = true, silent = false})
 
--- Format code
-keyset("n", "<leader>f", ":Format<CR>",
-       {noremap = true, unique = true, silent = false})
-
 -- Toggle wrap
 keyset("n", "<leader>w", ":set wrap!<CR>",
        {noremap = true, unique = true, silent = false})
@@ -49,26 +45,26 @@ keyset("n", "<leader>w", ":set wrap!<CR>",
 keyset("n", "<leader>l", ":set list!<CR>",
        {noremap = true, unique = true, silent = false})
 
--- Packer Sync
+-- Packer
 keyset("n", "<leader>py", ":PackerSync<CR>",
        {noremap = true, unique = true, silent = false})
-
--- Packer Status
 keyset("n", "<leader>ps", ":PackerStatus<CR>",
        {noremap = true, unique = true, silent = false})
-
--- Packer Clean
 keyset("n", "<leader>pl", ":PackerClean<CR>",
        {noremap = true, unique = true, silent = false})
-
--- Packer Compile
 keyset("n", "<leader>po", ":PackerCompile<CR>",
        {noremap = true, unique = true, silent = false})
-
--- Packer Update
 keyset("n", "<leader>pu", ":PackerUpdate<CR>",
        {noremap = true, unique = true, silent = false})
-
--- Packer Install
 keyset("n", "<leader>pi", ":PackerInstall<UpdateCR>",
+       {noremap = true, unique = true, silent = false})
+
+-- Diagnostic
+keyset('n', '<leader>e', vim.diagnostic.open_float,
+       {noremap = true, unique = true, silent = false})
+keyset('n', '[x', vim.diagnostic.goto_prev,
+       {noremap = true, unique = true, silent = false})
+keyset('n', ']x', vim.diagnostic.goto_next,
+       {noremap = true, unique = true, silent = false})
+keyset('n', '<leader>q', vim.diagnostic.setloclist,
        {noremap = true, unique = true, silent = false})

@@ -49,9 +49,6 @@ return require('packer').startup(function(use)
     -- This plugin is used for displaying thin vertical lines at each indentation
     use "lukas-reineke/indent-blankline.nvim"
 
-    -- Coc is an intellisense engine for vim8 & neovim.
-    use {'neoclide/coc.nvim', branch = 'release'}
-
     -- MarkdownPreview
     use({
         'iamcco/markdown-preview.nvim',
@@ -81,13 +78,14 @@ return require('packer').startup(function(use)
     -- https://github.com/junegunn/fzf.vim
     use 'junegunn/fzf.vim'
 
-    -- coc.nvim source for Zsh completions
-    use 'tjdevries/coc-zsh'
-
     -- LSP
-    use 'williamboman/mason.nvim'
+    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'williamboman/mason-lspconfig'
-    use 'neovim/nvim-lspconfig'
+    use 'williamboman/mason.nvim'
 
     -- tabline
     use {
