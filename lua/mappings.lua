@@ -41,6 +41,10 @@ keyset("n", "S", "mzi<CR><ESC>`z",
 keyset("n", "<leader>f", ":Format<CR>",
        {noremap = true, unique = true, silent = false})
 
+-- Toggle wrap
+keyset("n", "<leader>w", ":set wrap!<CR>",
+       {noremap = true, unique = true, silent = false})
+
 -- Toggle list
 keyset("n", "<leader>l", ":set list!<CR>",
        {noremap = true, unique = true, silent = false})
