@@ -1,6 +1,33 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3.0](https://github.com/rodmoioliveira/neovim/compare/0.2.0...0.3.0) - 2023-01-10
+
+[d1ac455](https://github.com/rodmoioliveira/neovim/commit/d1ac455e55acbc53451bc1ad7dda27c9dbc5885d)...[78b702a](https://github.com/rodmoioliveira/neovim/commit/78b702a3cc37bb95ec1f69eae4168f99401eb1ed)
+
+### Bug Fixes
+
+- [7c85a78](https://github.com/rodmoioliveira/neovim/commit/7c85a78339c8645b3401f4429c7890707eeada7a) - Fix: fix autocomplete 
+
+### Features
+
+- [b7e0136](https://github.com/rodmoioliveira/neovim/commit/b7e0136a47a50432e2408f7645846464e5a2fab6) - Feat: add assets 
+- [c5a8994](https://github.com/rodmoioliveira/neovim/commit/c5a8994be01c1aa0987ae274eb739c1f0b7cdb15) - Feat: add remmaps 
+- [3c43c6f](https://github.com/rodmoioliveira/neovim/commit/3c43c6f0beab9ef68f5d14a04db89cbb9aab798d) - Feat: add more settings 
+- [8dd797f](https://github.com/rodmoioliveira/neovim/commit/8dd797f32f31003d39aa0ce240c41cbd6e1c23f8) - Feat: add folke/which-key.nvim 
+- [962721a](https://github.com/rodmoioliveira/neovim/commit/962721a4f38fd057f3bf34ce39a6596fb5979efe) - Feat: add "windwp/nvim-autopairs", remove "folke/which-key.nvim", 
+- [a941569](https://github.com/rodmoioliveira/neovim/commit/a941569d69117b2a586b4ba6d9221231276ccd3d) - Feat: add mappings for packer 
+- [ec64eb2](https://github.com/rodmoioliveira/neovim/commit/ec64eb28e01364b543c8a4536761c48a234f2316) - Feat: add folke/which-key.nvim 
+- [16b36b7](https://github.com/rodmoioliveira/neovim/commit/16b36b7e326ca6c3dc9ce60dc957605fd8459199) - Feat: add mapping Toggle wrap 
+
+### Miscellaneous Tasks
+
+- [49d17cc](https://github.com/rodmoioliveira/neovim/commit/49d17cc1b1f0b80b3e8f92453c4d0f3f959ad07c) - Chore: add Toggle list map 
+- [7ef8d35](https://github.com/rodmoioliveira/neovim/commit/7ef8d356e16e054648c543c9ed3813430c83c67b) - Chore: remove sheerun/vim-polyglot, add lukas-reineke/indent-blankline.nvim 
+- [86fb679](https://github.com/rodmoioliveira/neovim/commit/86fb67991b9896abf837975fc8a8027c169ac869) - Chore: update mappings for autocomplete 
+- [32fb688](https://github.com/rodmoioliveira/neovim/commit/32fb6888a20aae2c684c44fd44af6134a68bdbbe) - Chore: remove coc 
+- [78b702a](https://github.com/rodmoioliveira/neovim/commit/78b702a3cc37bb95ec1f69eae4168f99401eb1ed) - Chore: fmt code 
+
 ## [0.2.0](https://github.com/rodmoioliveira/neovim/compare/0.1.1...0.2.0) - 2023-01-06
 
 [71fd933](https://github.com/rodmoioliveira/neovim/commit/71fd933646b7c8c4b16174d5c845c4ebddc80433)...[d1ac455](https://github.com/rodmoioliveira/neovim/commit/d1ac455e55acbc53451bc1ad7dda27c9dbc5885d)
