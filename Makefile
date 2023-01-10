@@ -10,7 +10,7 @@ changelog: ## Autogenerate CHANGELOG.md
 	@docker run -t -v "$(shell pwd)":/app/ orhunp/git-cliff:latest --config cliff.toml --output CHANGELOG.md
 
 fmt: ## Format Lua code
-	@fd . -e lua | xargs lua-format -i
+	@fd . -e lua | xargs lua-format -i --indent-width=2 --spaces-inside-table-braces
 
 perf: ## Write startuptime performance file
 	@fd . -e lua | xargs nvim --startuptime perf.log -p

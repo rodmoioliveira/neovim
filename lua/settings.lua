@@ -1,6 +1,6 @@
 vim.filetype.add {
-    extension = {tex = "tex", zir = "zir"},
-    pattern = {["[jt]sconfig.*.json"] = "jsonc"}
+  extension = { tex = "tex", zir = "zir" },
+  pattern = { ["[jt]sconfig.*.json"] = "jsonc" }
 }
 vim.o.wildignore =
     "*/node_modules/*,*/tmp/*,tags,*.jpg,*.png,*.pyc,*.min.js,*/dist/*,*/json/*,*/csv/*,*/target/*,node_modules,*.json,*.csv,*.txt,*.tsv"
