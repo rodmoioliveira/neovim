@@ -104,3 +104,23 @@ cmp.setup {
     { name = 'path' }
   }
 }
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = { { name = 'buffer' } }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({ { name = 'path' } }, {
+    { name = 'cmdline', option = { ignore_cmds = { 'Man', '!' } } }
+  })
+})
+
+local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl })
+end
