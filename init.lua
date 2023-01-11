@@ -1,4 +1,5 @@
 require("my_packer")
+require('impatient')
 require("lsp")
 require("mappings")
 require("search")

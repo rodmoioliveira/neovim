@@ -1,4 +1,6 @@
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
+  use 'lewis6991/impatient.nvim'
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
