@@ -67,12 +67,63 @@ lspconfig.sumneko_lua.setup {
   }
 }
 
+-- https://smarttech101.com/nvim-lsp-configure-language-servers-shortcuts-highlights/
+-- https://www.nerdfonts.com/font-downloads
+local kind_icons = {
+  Class = "ﴯ",
+  Color = "",
+  Constant = "",
+  Constructor = "",
+  Enum = "",
+  EnumMember = "",
+  Event = "",
+  Field = "",
+  File = "",
+  Folder = "",
+  Function = "",
+  Interface = "",
+  Keyword = "",
+  Method = "",
+  Module = "",
+  Operator = "",
+  Property = "ﰠ",
+  Reference = "",
+  Snippet = "",
+  Struct = "",
+  Text = "",
+  TypeParameter = "",
+  Unit = "",
+  Value = "",
+  Variable = ""
+}
+
 -- luasnip setup
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
+  formatting = {
+    format = function(entry, vim_item)
+      -- Kind icons
+      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind],
+                                    vim_item.kind) -- Concatonate the icons with name of the item-kind
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        spell = "[Spellings]",
+        zsh = "[Zsh]",
+        buffer = "[Buffer]",
+        ultisnips = "[Snip]",
+        treesitter = "[Treesitter]",
+        calc = "[Calculator]",
+        nvim_lua = "[Lua]",
+        path = "[Path]",
+        nvim_lsp_signature_help = "[Signature]",
+        cmdline = "[Vim Command]"
+      })[entry.source.name]
+      return vim_item
+    end
+  },
   snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -99,6 +150,7 @@ cmp.setup {
       end
     end, { 'i', 's' })
   }),
+  matching = { disallow_fuzzy_matching = false },
   sources = {
     { name = 'nvim_lsp' }, { name = 'luasnip' }, { name = 'buffer' },
     { name = 'path' }
