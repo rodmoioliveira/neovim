@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3.1](https://github.com/rodmoioliveira/neovim/compare/0.3.0...0.3.1) - 2023-01-11
+
+[78b702a](https://github.com/rodmoioliveira/neovim/commit/78b702a3cc37bb95ec1f69eae4168f99401eb1ed)...[f73ed22](https://github.com/rodmoioliveira/neovim/commit/f73ed22697678df7c480033413527b5bc40f8a82)
+
+### Miscellaneous Tasks
+
+- [0ffec8a](https://github.com/rodmoioliveira/neovim/commit/0ffec8a9748c098c7561c54f40c0cd3b0d7aaa45) - Chore: add yamlls 
+- [940a3a7](https://github.com/rodmoioliveira/neovim/commit/940a3a7486f128ccd19928734a51edfaed50811c) - Chore: add dockerls, jsonls 
+- [f73ed22](https://github.com/rodmoioliveira/neovim/commit/f73ed22697678df7c480033413527b5bc40f8a82) - Chore: add lewis6991/impatient.nvim 
+
 ## [0.3.0](https://github.com/rodmoioliveira/neovim/compare/0.2.0...0.3.0) - 2023-01-10
 
 [d1ac455](https://github.com/rodmoioliveira/neovim/commit/d1ac455e55acbc53451bc1ad7dda27c9dbc5885d)...[78b702a](https://github.com/rodmoioliveira/neovim/commit/78b702a3cc37bb95ec1f69eae4168f99401eb1ed)
