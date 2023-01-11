@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3.2](https://github.com/rodmoioliveira/neovim/compare/0.3.1...0.3.2) - 2023-01-11
+
+[f73ed22](https://github.com/rodmoioliveira/neovim/commit/f73ed22697678df7c480033413527b5bc40f8a82)...[87910d3](https://github.com/rodmoioliveira/neovim/commit/87910d3a5a46a99881589340f96877e0bf54ba6b)
+
+### Miscellaneous Tasks
+
+- [71ac6ec](https://github.com/rodmoioliveira/neovim/commit/71ac6ece5a8e1e6c3857408f6859d2e6ad3fbe17) - Chore: add hrsh7th/cmp-buffer, hrsh7th/cmp-path 
+- [ea6b616](https://github.com/rodmoioliveira/neovim/commit/ea6b616cf9582d888cb7fa9bd66c915d2b930a50) - Chore: add hrsh7th/cmp-cmdline 
+- [87910d3](https://github.com/rodmoioliveira/neovim/commit/87910d3a5a46a99881589340f96877e0bf54ba6b) - Chore: add kind_icons for cmp 
+
 ## [0.3.1](https://github.com/rodmoioliveira/neovim/compare/0.3.0...0.3.1) - 2023-01-11
 
 [78b702a](https://github.com/rodmoioliveira/neovim/commit/78b702a3cc37bb95ec1f69eae4168f99401eb1ed)...[f73ed22](https://github.com/rodmoioliveira/neovim/commit/f73ed22697678df7c480033413527b5bc40f8a82)
