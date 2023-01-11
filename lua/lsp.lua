@@ -27,7 +27,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     -- Replace these with whatever servers you want to install
     'sumneko_lua', 'rust_analyzer', 'tsserver', 'bashls', 'golangci_lint_ls',
-    'pyright', 'bufls'
+    'pyright', 'bufls', 'yamlls'
   }
 })
 

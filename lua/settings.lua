@@ -29,7 +29,6 @@ vim.o.lazyredraw = true -- redraw only when we need to.
 vim.o.linebreak = true
 vim.o.mat = 2 -- How many tenths of a second to blink when matching brackets
 vim.o.number = true
-vim.o.regexpengine = 1
 vim.o.relativenumber = true
 vim.o.ruler = true -- Always show current position
 vim.o.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor.
