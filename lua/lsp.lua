@@ -47,6 +47,23 @@ for _, server_name in ipairs(get_servers()) do
   })
 end
 
+lspconfig["rust_analyzer"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        allFeatures = true,
+        overrideCommand = {
+          'cargo', 'clippy', '--workspace', '--message-format=json',
+          '--all-targets', '--all-features'
+        }
+      }
+    }
+  }
+}
+
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   flags = lsp_flags,
