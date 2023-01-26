@@ -10,9 +10,9 @@ keyset('n', '<leader>h', ':nohlsearch<CR>',
        { noremap = true, unique = true, silent = false }) -- Space remove highlight serch
 
 -- Gitsigns
-keyset('n', '[g', ':Gitsigns next_hunk<CR>',
+keyset('n', ']g', ':Gitsigns next_hunk<CR>',
        { noremap = true, unique = true, silent = false }) -- Next git change
-keyset('n', ']g', ':Gitsigns prev_hunk<CR>',
+keyset('n', '[g', ':Gitsigns prev_hunk<CR>',
        { noremap = true, unique = true, silent = false }) -- Prev git change
 keyset('n', '<leader>d', ':Gitsigns diffthis<CR>',
        { noremap = true, unique = true, silent = false })
