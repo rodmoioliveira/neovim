@@ -26,8 +26,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     -- Replace these with whatever servers you want to install
     -- https://langserver.org/
-    'sumneko_lua', 'rust_analyzer', 'tsserver', 'bashls', 'golangci_lint_ls',
-    'pyright', 'bufls', 'yamlls', 'dockerls', 'jsonls'
+    'lua_ls', 'rust_analyzer', 'tsserver', 'bashls', 'pyright', 'yamlls',
+    'dockerls', 'jsonls'
   }
 })
 
@@ -64,7 +64,7 @@ lspconfig["rust_analyzer"].setup {
   }
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
