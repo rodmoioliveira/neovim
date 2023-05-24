@@ -5,42 +5,10 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Colors
-  -- use 'Jorengarenar/vim-darkness'
-  -- use 'LuRsT/austere.vim'
-  -- use 'LuRsT/dvo.vim'
-  -- use 'Michal-Miko/vim-mono-red'
-  -- use 'Resonious/vim-camo'
-  -- use 'abnt713/vim-hashpunk'
-  -- use 'chr4/jellygrass.vim'
-  -- use 'duckwork/low.vim'
-  -- use 'fenetikm/falcon'
-  -- use 'igrmk/kull-vim'
-  -- use 'jalvesaq/southernlights'
-  -- use 'jaredgorski/fogbell.vim'
-  -- use 'jasoncarr0/sidewalk-colorscheme'
-  -- use 'kyoto-shift/film-noir'
-  -- use 'lucasprag/simpleblack'
-  -- use 'marlun/vim-starwars'
   use 'p7g/vim-bow-wob'
-  -- use 'rafi/awesome-vim-colorschemes'
-  -- use 'ryanpcmcquen/true-monochrome_vim'
-  -- use 'sff1019/vim-joker'
-  -- use 'shattered/vimcolors'
-  -- use 'smallwat3r/vim-simplicity'
-  -- use 'szorfein/fantasy.vim'
-  -- use 't184256/vim-boring'
-  -- use 'theJian/Mogao'
-  -- use 'tomasr/molokai'
-  -- use 'tudurom/bleh.vim'
-  -- use 'zaki/zazen'
-  -- use 'zefei/simple-dark'
 
   -- gitsigns
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
+  use 'lewis6991/gitsigns.nvim'
 
   -- vim commentary
   use 'tpope/vim-commentary'
