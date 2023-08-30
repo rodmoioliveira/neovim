@@ -3,6 +3,7 @@ require('impatient')
 require("lsp")
 require("mappings")
 require("search")
+require("spellcheck")
 
 require("plugins.git")
 require("plugins.better-whitespace")
