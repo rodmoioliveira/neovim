@@ -33,8 +33,8 @@ require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
 
-  -- Autogenerate tags
-  use 'ludovicchabant/vim-gutentags'
+  -- -- Autogenerate tags
+  -- use 'ludovicchabant/vim-gutentags'
 
   -- Autoreoad Change Files
   use 'djoshea/vim-autoread'
