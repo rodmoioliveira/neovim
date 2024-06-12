@@ -19,14 +19,6 @@ require('packer').startup(function(use)
   -- This plugin is used for displaying thin vertical lines at each indentation
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- MarkdownPreview
-  use({
-    'iamcco/markdown-preview.nvim',
-    run = 'cd app && yarn install',
-    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
-    ft = { 'markdown' }
-  })
-
   -- Auto Pair
   use {
     "windwp/nvim-autopairs",
