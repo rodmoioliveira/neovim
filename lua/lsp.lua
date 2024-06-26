@@ -85,6 +85,7 @@ lspconfig.lua_ls.setup {
 
 -- https://smarttech101.com/nvim-lsp-configure-language-servers-shortcuts-highlights/
 -- https://www.nerdfonts.com/font-downloads
+-- TODO: add https://github.com/dcmox/ascii-icons
 local kind_icons = {
   Class = "ﴯ",
   Color = "",
@@ -106,7 +107,7 @@ local kind_icons = {
   Reference = "",
   Snippet = "",
   Struct = "",
-  Text = "",
+  Text = "🖮",
   TypeParameter = "",
   Unit = "",
   Value = "",
