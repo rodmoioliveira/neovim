@@ -26,7 +26,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     -- Replace these with whatever servers you want to install
     -- https://langserver.org/
-    'lua_ls', 'rust_analyzer', 'tsserver', 'bashls', 'pyright', 'yamlls',
+    'lua_ls', 'rust_analyzer', 'bashls', 'pyright', 'yamlls',
     'dockerls', 'jsonls'
   }
 })
