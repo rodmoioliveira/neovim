@@ -17,8 +17,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.formatting() end,
-                 bufopts)
+  vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end, bufopts)
 end
 
 require('mason').setup()
@@ -26,8 +25,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     -- Replace these with whatever servers you want to install
     -- https://langserver.org/
-    'lua_ls', 'rust_analyzer', 'bashls', 'pyright', 'yamlls',
-    'dockerls', 'jsonls'
+    'lua_ls', 'rust_analyzer', 'bashls', 'pyright', 'yamlls', 'dockerls',
+    'jsonls'
   }
 })
 

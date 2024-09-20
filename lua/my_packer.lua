@@ -41,7 +41,7 @@ require('packer').startup(function(use)
   use 'junegunn/fzf.vim'
 
   -- LSP
-  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }  -- Snippets plugin
+  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" } -- Snippets plugin
   use 'hrsh7th/cmp-buffer' -- Source for buffer words.
   use 'hrsh7th/cmp-cmdline' -- Source for vim's cmdline.
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
