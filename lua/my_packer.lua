@@ -13,6 +13,9 @@ require('packer').startup(function(use)
   -- vim commentary
   use 'tpope/vim-commentary'
 
+  -- vim surround
+  use 'tpope/vim-surround'
+
   -- A tree explorer plugin for vim.
   use 'ntpeters/vim-better-whitespace'
 
