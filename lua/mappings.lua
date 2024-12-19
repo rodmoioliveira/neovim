@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 
 local keyset = vim.keymap.set
 
-keyset('n', '<s-L>', ':tabnext<CR>', { noremap = true, unique = true, silent = false }) -- Next tab
-keyset('n', '<s-H>', ':tabprevious<CR>', { noremap = true, unique = true, silent = false }) -- Prev tabs
+keyset('n', '<s-L>', ':bnext<CR>', { noremap = true, unique = true, silent = false }) -- Next buffer
+keyset('n', '<s-H>', ':bprevious<CR>', { noremap = true, unique = true, silent = false }) -- Prev buffer
 keyset('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- Space remove highlight serch
 
 -- Gitsigns
