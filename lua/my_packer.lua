@@ -1,6 +1,12 @@
 require('packer').startup(function(use)
   use 'lewis6991/impatient.nvim'
 
+  -- -- hardtime
+  use {
+    'm4xshen/hardtime.nvim',
+    requires = { 'MunifTanjim/nui.nvim', opt = true }
+  }
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
