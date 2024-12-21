@@ -88,7 +88,6 @@ vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VI
 -- Remaps
 -- =======================================================================
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- Space remove highlight serch
-vim.keymap.set("n", "S", "mzi<CR><ESC>`z", { noremap = true, unique = true, silent = false }) -- [S]plit line (sister to [J]oin lines) S is covered by cc.
 vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle wrap
 vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle list
 
