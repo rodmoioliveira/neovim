@@ -94,13 +94,6 @@ vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completio
 vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
 
 -- =======================================================================
--- Remaps
--- =======================================================================
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- Space remove highlight serch
-vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle wrap
-vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle list
-
--- =======================================================================
 -- Setup lazy.nvim
 -- =======================================================================
 require("lazy").setup({
@@ -137,9 +130,7 @@ require("lazy").setup({
         status_formatter = nil, -- Use default
         max_file_length = 40000, -- Disable if file is longer than this (in lines)
         preview_config = {
-          -- ==========
           -- Options passed to nvim_open_win
-          -- ==========
           border = 'single',
           style = 'minimal',
           relative = 'cursor',
@@ -155,9 +146,7 @@ require("lazy").setup({
             vim.keymap.set(mode, l, r, opts)
           end
 
-          -- ==========
           -- Navigation
-          -- ==========
           map('n', ']g', function()
             if vim.wo.diff then
               vim.cmd.normal({']g', bang = true})
@@ -174,22 +163,16 @@ require("lazy").setup({
             end
           end)
 
-          -- ==========
           -- Actions
-          -- ==========
           map('n', '<leader>gb', "<cmd>Gitsigns blame<CR>")
           map('n', '<leader>gd', gitsigns.diffthis)
 
-          -- ==========
           -- Text object
-          -- ==========
           map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
         end
       }
 
-      -- ==========
       -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
-      -- ==========
       vim.cmd [[
       augroup gitsigns_colors
           autocmd!
@@ -260,9 +243,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+    vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end,
 })
 
@@ -299,7 +282,7 @@ require("lazy-lsp").setup {
 }
 
 -- =======================================================================
--- diagnostics
+-- Diagnostics
 -- =======================================================================
 vim.diagnostic.config({
   signs = {
@@ -313,23 +296,17 @@ vim.diagnostic.config({
 })
 
 -- =======================================================================
--- completions
+-- Completions
 -- =======================================================================
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 cmp.setup({
-  -- ==========
   -- https://lsp-zero.netlify.app/docs/autocomplete.html#change-formatting-of-completion-item
-  -- ==========
   formatting = {
-    -- ==========
     -- changing the order of fields so the icon is the first
-    -- ==========
     fields = {'menu', 'abbr', 'kind'},
 
-    -- ==========
     -- here is where the change happens
-    -- ==========
     format = function(entry, item)
       local menu_icon = {
         nvim_lsp = 'λ',
@@ -389,3 +366,19 @@ vim.cmd('colorscheme bow-wob')
 vim.cmd('highlight SignColumn guibg=bow-wob')
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+-- =======================================================================
+-- Remaps
+-- =======================================================================
+-- search
+vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- Space remove highlight serch
+
+-- wrap and list
+vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle wrap
+vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle list
+
+-- diagnostics
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { noremap = true, unique = true, silent = false })
+vim.keymap.set('n', '[x', vim.diagnostic.goto_prev, { noremap = true, unique = true, silent = false })
+vim.keymap.set('n', ']x', vim.diagnostic.goto_next, { noremap = true, unique = true, silent = false })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { noremap = true, unique = true, silent = false })
