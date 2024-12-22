@@ -272,18 +272,21 @@ require("lazy").setup({
 -- =======================================================================
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
-    local opts = {buffer = event.buf}
+    local opts = { noremap = true, unique = true, silent = false , buffer = event.buf }
 
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+
+    -- Check :h lsp-defaults
+    -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) :h K
+    -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- Check CTRL-], CTRL-W_], CTRL-W_}
+    vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+    vim.keymap.set('n', 'gra', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', 'grr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+    vim.keymap.set('n', 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+    vim.keymap.set('n', 'gO', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
+    vim.keymap.set('n', '<C-S>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
   end,
 })
 
@@ -407,16 +410,17 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 -- =======================================================================
 -- Remaps
+-- Please check out the default-mappings in :h default-mappings
 -- =======================================================================
 -- search
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- Space remove highlight serch
+-- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- :h CTRL-L-default
 
 -- wrap and list
 vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle wrap
 vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle list
 
 -- diagnostics
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { noremap = true, unique = true, silent = false })
-vim.keymap.set('n', '[x', vim.diagnostic.goto_prev, { noremap = true, unique = true, silent = false })
-vim.keymap.set('n', ']x', vim.diagnostic.goto_next, { noremap = true, unique = true, silent = false })
+-- vim.keymap.set('n', '<C-W>d', vim.diagnostic.open_float, { noremap = true, unique = true, silent = false }) -- :h CTRL-W_d-default
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, unique = true, silent = false }) -- :h [d-default
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap = true, unique = true, silent = false }) -- :h ]d-default
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { noremap = true, unique = true, silent = false })
