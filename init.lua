@@ -2,7 +2,6 @@
 -- Bootstrap lazy.nvim
 -- =======================================================================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({
@@ -23,7 +22,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
   end
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 -- =======================================================================
@@ -97,7 +95,13 @@ vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VI
 -- Setup lazy.nvim
 -- =======================================================================
 require("lazy").setup({
-  { "ibhagwan/fzf-lua", dependencies = { "nvim-tree/nvim-web-devicons" }, config = function() require("fzf-lua").setup({}) end },
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("fzf-lua").setup({})
+    end
+  },
   {
     "lewis6991/gitsigns.nvim",
     opt = {},
@@ -112,9 +116,9 @@ require("lazy").setup({
           untracked = { text = '┆' }
         },
         signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
-        numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
-        linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-        word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+        numhl = true,       -- Toggle with `:Gitsigns toggle_numhl`
+        linehl = false,     -- Toggle with `:Gitsigns toggle_linehl`
+        word_diff = false,  -- Toggle with `:Gitsigns toggle_word_diff`
         watch_gitdir = { interval = 1000, follow_files = true },
         attach_to_untracked = true,
         current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
@@ -127,7 +131,7 @@ require("lazy").setup({
         current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
         sign_priority = 6,
         update_debounce = 100,
-        status_formatter = nil, -- Use default
+        status_formatter = nil,  -- Use default
         max_file_length = 40000, -- Disable if file is longer than this (in lines)
         preview_config = {
           -- Options passed to nvim_open_win
@@ -149,7 +153,7 @@ require("lazy").setup({
           -- Navigation
           map('n', ']g', function()
             if vim.wo.diff then
-              vim.cmd.normal({']g', bang = true})
+              vim.cmd.normal({ ']g', bang = true })
             else
               gitsigns.nav_hunk('next')
             end
@@ -157,7 +161,7 @@ require("lazy").setup({
 
           map('n', '[g', function()
             if vim.wo.diff then
-              vim.cmd.normal({'[g', bang = true})
+              vim.cmd.normal({ '[g', bang = true })
             else
               gitsigns.nav_hunk('prev')
             end
@@ -168,7 +172,7 @@ require("lazy").setup({
           map('n', '<leader>gd', gitsigns.diffthis)
 
           -- Text object
-          map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+          map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
         end
       }
 
@@ -186,7 +190,7 @@ require("lazy").setup({
           autocmd ColorScheme * hi GitSignsUntracked       gui=none    guibg=NONE       guifg=grey69
       augroup END
       ]]
-  end
+    end
   },
   { "m4xshen/hardtime.nvim", dependencies = { "MunifTanjim/nui.nvim" }, opts = {} },
   { "ntpeters/vim-better-whitespace", opt = {} },
@@ -203,7 +207,6 @@ require("lazy").setup({
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
-  { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -243,179 +246,183 @@ require("lazy").setup({
       }
     end
   },
-  { "rasulomaroff/cmp-bufname" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-cmdline" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-nvim-lsp-signature-help" },
-  { "hrsh7th/cmp-path" },
-  { "hrsh7th/nvim-cmp" },
-  { "neovim/nvim-lspconfig" },
-  { "saadparwaiz1/cmp_luasnip" },
   {
-    "dundalek/lazy-lsp.nvim",
+    "neovim/nvim-lspconfig",
     dependencies = {
-      "neovim/nvim-lspconfig",
-      {"VonHeikemen/lsp-zero.nvim", branch = "v3.x"},
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
       "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
+      "saadparwaiz1/cmp_luasnip",
+      "j-hui/fidget.nvim",
     },
+
+    -- =======================================================================
+    -- Lsp Config
+    -- =======================================================================
     config = function()
-      require("lazy-lsp").setup {}
-    end,
-  },
-})
+      local cmp = require('cmp')
+      local cmp_lsp = require("cmp_nvim_lsp")
+      local capabilities = vim.tbl_deep_extend(
+        "force",
+        {},
+        vim.lsp.protocol.make_client_capabilities(),
+        cmp_lsp.default_capabilities())
 
--- =======================================================================
--- Completions
--- =======================================================================
-local cmp = require('cmp')
-local luasnip = require('luasnip')
+      require("fidget").setup({})
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "rust_analyzer",
+        },
+        handlers = {
+          function(server_name)
+            require("lspconfig")[server_name].setup {
+              capabilities = capabilities
+            }
+          end,
 
-cmp.setup({
-  -- https://lsp-zero.netlify.app/docs/autocomplete.html#change-formatting-of-completion-item
-  formatting = {
-    -- changing the order of fields so the icon is the first
-    fields = { 'menu', 'abbr', 'kind' },
+          ["lua_ls"] = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup {
+              capabilities = capabilities,
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = { "vim", "it", "describe", "before_each", "after_each" },
+                  }
+                }
+              }
+            }
+          end,
+        }
+      })
 
-    -- here is where the change happens
-    format = function(entry, item)
-      local menu_icon = {
-        nvim_lsp = 'λ',
-        luasnip = '⋗',
-        buffer = 'Ω',
-        path = '🖫',
-        nvim_lua = 'Π',
-      }
+      -- =======================================================================
+      -- Completions
+      -- =======================================================================
+      local luasnip = require('luasnip')
 
-      item.menu = menu_icon[entry.source.name]
-      return item
-    end,
-  },
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    end,
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'luasnip' },
-  }, {
-    { name = 'buffer' },
-  }),
-  mapping = cmp.mapping.preset.insert({
-    ['<C-Space>'] = cmp.mapping.complete(),
+      cmp.setup({
+        -- https://lsp-zero.netlify.app/docs/autocomplete.html#change-formatting-of-completion-item
+        formatting = {
+          -- changing the order of fields so the icon is the first
+          fields = { 'menu', 'abbr', 'kind' },
 
-    ['<CR>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        if luasnip.expandable() then
-          luasnip.expand()
-        else
-          cmp.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          })
-        end
-      else
-        fallback()
-      end
-    end),
+          -- here is where the change happens
+          format = function(entry, item)
+            local menu_icon = {
+              nvim_lsp = 'λ',
+              luasnip = '⋗',
+              buffer = 'Ω',
+              path = '🖫',
+              nvim_lua = 'Π',
+            }
 
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.locally_jumpable(1) then
-        luasnip.jump(1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
+            item.menu = menu_icon[entry.source.name]
+            return item
+          end,
+        },
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
+          end,
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'nvim_lsp_signature_help' },
+          { name = 'luasnip' },
+          { name = 'buffer' },
+        }),
+        mapping = cmp.mapping.preset.insert({
+          ['<C-Space>'] = cmp.mapping.complete(),
 
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-  }),
-})
+          ['<CR>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              if luasnip.expandable() then
+                luasnip.expand()
+              else
+                cmp.confirm({
+                  behavior = cmp.ConfirmBehavior.Replace,
+                  select = true,
+                })
+              end
+            else
+              fallback()
+            end
+          end),
 
--- =======================================================================
--- LspAttach
--- =======================================================================
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(event)
-    local opts = { noremap = true, unique = true, silent = false, buffer = event.buf }
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.locally_jumpable(1) then
+              luasnip.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
 
-    vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        }),
+      })
 
-    -- Check :h lsp-defaults
-    -- 'formatexpr' is set to |vim.lsp.formatexpr()|, so you can format lines via |gq| if the language server supports it.
-    -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) :h K
-    -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- :h CTRL-], CTRL-W_], CTRL-W_}
-    -- vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    -- vim.keymap.set('n', 'gra', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    -- vim.keymap.set('n', 'grr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    -- vim.keymap.set('n', 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    -- vim.keymap.set('n', 'gO', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
-    -- vim.keymap.set('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-  end,
-})
-
--- =======================================================================
--- lspconfig_defaults
--- =======================================================================
-local lspconfig_defaults = require('lspconfig').util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
-
--- =======================================================================
--- lazy-lsp
--- =======================================================================
-require("lazy-lsp").setup {
-  default_config = {
-    flags = {
-      debounce_text_changes = 150,
-    },
-  },
-  configs = {
-    lua_ls = {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
+      -- =======================================================================
+      -- Diagnostics
+      -- =======================================================================
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '✘',
+            [vim.diagnostic.severity.WARN] = '▲',
+            [vim.diagnostic.severity.HINT] = '⚑',
+            [vim.diagnostic.severity.INFO] = '»',
           },
         },
-      },
-    },
-  },
-}
+      })
 
--- =======================================================================
--- Diagnostics
--- =======================================================================
-vim.diagnostic.config({
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '✘',
-      [vim.diagnostic.severity.WARN] = '▲',
-      [vim.diagnostic.severity.HINT] = '⚑',
-      [vim.diagnostic.severity.INFO] = '»',
-    },
-  },
+      -- =======================================================================
+      -- LspAttach
+      -- =======================================================================
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(event)
+          local opts = { noremap = true, unique = false, silent = false, buffer = event.buf }
+
+          vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+          vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+          vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+
+          -- Check :h lsp-defaults
+          -- 'formatexpr' is set to |vim.lsp.formatexpr()|, so you can format lines via |gq| if the language server supports it.
+          -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) :h K
+          -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- :h CTRL-], CTRL-W_], CTRL-W_}
+          -- vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+          -- vim.keymap.set('n', 'gra', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+          -- vim.keymap.set('n', 'grr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+          -- vim.keymap.set('n', 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+          -- vim.keymap.set('n', 'gO', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
+          -- vim.keymap.set('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+        end,
+      })
+   end
+  }
 })
 
 -- =======================================================================
