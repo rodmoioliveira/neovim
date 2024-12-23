@@ -267,6 +267,88 @@ require("lazy").setup({
 })
 
 -- =======================================================================
+-- Completions
+-- =======================================================================
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+
+cmp.setup({
+  -- https://lsp-zero.netlify.app/docs/autocomplete.html#change-formatting-of-completion-item
+  formatting = {
+    -- changing the order of fields so the icon is the first
+    fields = { 'menu', 'abbr', 'kind' },
+
+    -- here is where the change happens
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = 'λ',
+        luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
+        nvim_lua = 'Π',
+      }
+
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
+  },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'luasnip' },
+  }, {
+    { name = 'buffer' },
+  }),
+  mapping = cmp.mapping.preset.insert({
+    ['<C-Space>'] = cmp.mapping.complete(),
+
+    ['<CR>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        if luasnip.expandable() then
+          luasnip.expand()
+        else
+          cmp.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          })
+        end
+      else
+        fallback()
+      end
+    end),
+
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.locally_jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  }),
+})
+
+-- =======================================================================
 -- LspAttach
 -- =======================================================================
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -334,70 +416,6 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.INFO] = '»',
     },
   },
-})
-
--- =======================================================================
--- Completions
--- =======================================================================
-local cmp = require('cmp')
-local luasnip = require('luasnip')
-cmp.setup({
-  -- https://lsp-zero.netlify.app/docs/autocomplete.html#change-formatting-of-completion-item
-  formatting = {
-    -- changing the order of fields so the icon is the first
-    fields = {'menu', 'abbr', 'kind'},
-
-    -- here is where the change happens
-    format = function(entry, item)
-      local menu_icon = {
-        nvim_lsp = 'λ',
-        luasnip = '⋗',
-        buffer = 'Ω',
-        path = '🖫',
-        nvim_lua = 'Π',
-      }
-
-      item.menu = menu_icon[entry.source.name]
-      return item
-    end,
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  sources = {
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'path' },
-    { name = 'luasnip' },
-    { name = 'buffer' },
-    { name = 'nvim_lsp' },
-    { name = 'bufname' },
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-     else
-        fallback()
-      end
-    end, { 'i', 's' })
-  }),
 })
 
 -- =======================================================================
