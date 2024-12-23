@@ -135,7 +135,7 @@ require("lazy").setup({
         max_file_length = 40000, -- Disable if file is longer than this (in lines)
         preview_config = {
           -- Options passed to nvim_open_win
-          border = 'single',
+          border = 'rounded',
           style = 'minimal',
           relative = 'cursor',
           row = 0,
@@ -388,6 +388,9 @@ require("lazy").setup({
       -- Diagnostics
       -- =======================================================================
       vim.diagnostic.config({
+        float = {
+          border = 'rounded',
+        },
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = '✘',
@@ -432,6 +435,9 @@ vim.cmd('colorscheme bow-wob')
 vim.cmd('highlight SignColumn guibg=bow-wob')
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+-- :h fzf-lua-coming-from-fzf.vim?
+vim.cmd(':FzfLua setup_fzfvim_cmds')
 
 -- =======================================================================
 -- Remaps
