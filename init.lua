@@ -100,7 +100,8 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("fzf-lua").setup({})
-    end
+    end,
+    opts = { 'skim' }
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -196,17 +197,7 @@ require("lazy").setup({
   { "ntpeters/vim-better-whitespace", opt = {} },
   { "p7g/vim-bow-wob", opt = {} },
   { "tpope/vim-surround", opt = {} },
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    dependencies = { "hrsh7th/nvim-cmp" },
-    config = function()
-      require("nvim-autopairs").setup {}
-      local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-      local cmp = require "cmp"
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-    end,
-  },
+  { 'windwp/nvim-autopairs', event = "InsertEnter", config = true },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -215,7 +206,7 @@ require("lazy").setup({
         options = {
           icons_enabled = false,
           theme = 'codedark',
-          component_separators = { left = '', right = '' },
+          component_separators = { left = '|', right = '|' },
           section_separators = { left = '', right = '' },
           disabled_filetypes = { statusline = {}, winbar = {} },
           ignore_focus = {},
@@ -226,7 +217,7 @@ require("lazy").setup({
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
+          lualine_c = { 'buffers' },
           lualine_x = { 'encoding', 'fileformat', 'filetype' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' }
@@ -246,33 +237,68 @@ require("lazy").setup({
       }
     end
   },
+
+  -- =======================================================================
+  -- Completions
+  -- =======================================================================
+  {
+    'saghen/blink.cmp',
+    event = { "LspAttach" },
+    dependencies = 'rafamadriz/friendly-snippets',
+    version = '*',
+    opts = {
+      completion = {
+        ghost_text = { enabled = true },
+        list = { selection = function(ctx) return ctx.mode == "cmdline" end, },
+        menu = { border = 'single' },
+        documentation = { window = { border = 'single' } },
+      },
+      signature = { enabled = true, window = { border = 'single' } },
+
+      -- https://cmp.saghen.dev/configuration/keymap.html#default
+      keymap = { preset = 'default' },
+      appearance = {
+        use_nvim_cmp_as_default = true,
+        nerd_font_variant = 'mono'
+      },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+    },
+    opts_extend = { "sources.default" }
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
-      { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
-      "saadparwaiz1/cmp_luasnip",
       "j-hui/fidget.nvim",
+      "saghen/blink.cmp",
+    },
+    opts = {
+      servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim", "it", "describe", "before_each", "after_each" },
+              }
+            }
+          }
+        }
+      }
     },
 
     -- =======================================================================
     -- Lsp Config
     -- =======================================================================
     config = function()
-      local cmp = require('cmp')
-      local cmp_lsp = require("cmp_nvim_lsp")
+      local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
         vim.lsp.protocol.make_client_capabilities(),
-        cmp_lsp.default_capabilities())
+        blink_capabilities)
 
       require("fidget").setup({})
       require("mason").setup()
@@ -287,101 +313,7 @@ require("lazy").setup({
               capabilities = capabilities
             }
           end,
-
-          ["lua_ls"] = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup {
-              capabilities = capabilities,
-              settings = {
-                Lua = {
-                  diagnostics = {
-                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                  }
-                }
-              }
-            }
-          end,
         }
-      })
-
-      -- =======================================================================
-      -- Completions
-      -- =======================================================================
-      local luasnip = require('luasnip')
-
-      cmp.setup({
-        -- https://lsp-zero.netlify.app/docs/autocomplete.html#change-formatting-of-completion-item
-        formatting = {
-          -- changing the order of fields so the icon is the first
-          fields = { 'menu', 'abbr', 'kind' },
-
-          -- here is where the change happens
-          format = function(entry, item)
-            local menu_icon = {
-              nvim_lsp = 'λ',
-              luasnip = '⋗',
-              buffer = 'Ω',
-              path = '🖫',
-              nvim_lua = 'Π',
-            }
-
-            item.menu = menu_icon[entry.source.name]
-            return item
-          end,
-        },
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
-          end,
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'nvim_lsp_signature_help' },
-          { name = 'luasnip' },
-          { name = 'buffer' },
-        }),
-        mapping = cmp.mapping.preset.insert({
-          ['<C-Space>'] = cmp.mapping.complete(),
-
-          ['<CR>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              if luasnip.expandable() then
-                luasnip.expand()
-              else
-                cmp.confirm({
-                  behavior = cmp.ConfirmBehavior.Replace,
-                  select = true,
-                })
-              end
-            else
-              fallback()
-            end
-          end),
-
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.locally_jumpable(1) then
-              luasnip.jump(1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-        }),
       })
 
       -- =======================================================================
