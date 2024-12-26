@@ -21,7 +21,7 @@ bash-lint: ## Check lint bash code
 	@find . -type f -name "*.sh" -not -path "./target/*" | xargs shellcheck -o all
 
 doc-changelog: ## Write CHANGELOG.md
-	@git cliff -o CHANGELOG.md
+	@./scripts/doc-changelog.sh
 
 lua-fmt: ## Format Lua code
 	@find . -name "*.lua" | xargs lua-format -i --indent-width=2 --spaces-inside-table-braces --no-align-table-field --break-after-table-lb --break-before-table-rb --single-quote-to-double-quote
