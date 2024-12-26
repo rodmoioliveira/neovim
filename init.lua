@@ -155,36 +155,32 @@ require("lazy").setup({
         },
         on_attach = function(bufnr)
           local gitsigns = require('gitsigns')
-
-          local function map(mode, l, r, opts)
-            opts = opts or {}
-            opts.buffer = bufnr
-            vim.keymap.set(mode, l, r, opts)
-          end
-
-          -- Navigation
-          map('n', ']g', function()
+          local opts = { buffer = bufnr }
+          local fn_next = function()
             if vim.wo.diff then
               vim.cmd.normal({ ']g', bang = true })
             else
               gitsigns.nav_hunk('next')
             end
-          end)
-
-          map('n', '[g', function()
+          end
+          local fn_prev = function()
             if vim.wo.diff then
               vim.cmd.normal({ '[g', bang = true })
             else
               gitsigns.nav_hunk('prev')
             end
-          end)
+          end
+
+          -- Navigation
+          Map('n', ']g', fn_next, opts)
+          Map('n', '[g', fn_prev, opts)
 
           -- Actions
-          map('n', '<leader>gb', "<cmd>Gitsigns blame<CR>")
-          map('n', '<leader>gd', gitsigns.diffthis)
+          Map('n', '<leader>gb', "<cmd>Gitsigns blame<CR>", opts)
+          Map('n', '<leader>gd', gitsigns.diffthis, opts)
 
           -- Text object
-          map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+          Map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
         end
       }
 
@@ -404,20 +400,20 @@ require("lazy").setup({
         callback = function(event)
           local opts = { noremap = true, unique = false, silent = false, buffer = event.buf }
 
-          vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-          vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-          vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+          Map('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+          Map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+          Map('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
 
           -- Check :h lsp-defaults
           -- 'formatexpr' is set to |vim.lsp.formatexpr()|, so you can format lines via |gq| if the language server supports it.
-          -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) :h K
-          -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- :h CTRL-], CTRL-W_], CTRL-W_}
-          -- vim.keymap.set('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-          -- vim.keymap.set('n', 'gra', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-          -- vim.keymap.set('n', 'grr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-          -- vim.keymap.set('n', 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-          -- vim.keymap.set('n', 'gO', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
-          -- vim.keymap.set('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+          -- Map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) -- :h K
+          -- Map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts) -- :h CTRL-], CTRL-W_], CTRL-W_}
+          -- Map('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+          -- Map('n', 'gra', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+          -- Map('n', 'grr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+          -- Map('n', 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+          -- Map('n', 'gO', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
+          -- Map('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
         end,
       })
    end
