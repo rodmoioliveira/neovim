@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.4.1](https://github.com/rodmoioliveira/neovim/compare/0.4.0...0.4.1) - 2024-12-26
+
+[58f68be](https://github.com/rodmoioliveira/neovim/commit/58f68be9f2c277078d7d5631e27d193032f735b6)...[0334df6](https://github.com/rodmoioliveira/neovim/commit/0334df6ac0eb1357ac6f94c130d5e8d49294573f)
+
+### Features
+
+- [0334df6](https://github.com/rodmoioliveira/neovim/commit/0334df6ac0eb1357ac6f94c130d5e8d49294573f) - Feat: Add nvim_create_autocmd TextYankPost
+
 ## [0.4.0](https://github.com/rodmoioliveira/neovim/compare/0.3.2...0.4.0) - 2024-12-26
 
 [87910d3](https://github.com/rodmoioliveira/neovim/commit/87910d3a5a46a99881589340f96877e0bf54ba6b)...[58f68be](https://github.com/rodmoioliveira/neovim/commit/58f68be9f2c277078d7d5631e27d193032f735b6)
