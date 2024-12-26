@@ -417,3 +417,9 @@ Map("n", "<C-d>", "<C-d>zz")
 Map("n", "<C-u>", "<C-u>zz")
 Map("n", "n", "nzzzv")
 Map("n", "N", "Nzzzv")
+
+-- resize windows
+Map("n", "<C-Up>", ":resize -2<CR>")
+Map("n", "<C-Down>", ":resize +2<CR>")
+Map("n", "<C-Left>", ":vertical resize -2<CR>")
+Map("n", "<C-Right>", ":vertical resize +2<CR>")
