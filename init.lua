@@ -388,6 +388,20 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.cmd(":FzfLua setup_fzfvim_cmds")
 
 -- =======================================================================
+-- AutoCommands
+-- =======================================================================
+
+-- :h vim.hl
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#c30049", fg = "#ffffff" })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank({ higroup = "YankHighlight", timeout = 300 })
+  end
+})
+
+-- =======================================================================
 -- Remaps
 -- Please check out the default-mappings in :h default-mappings
 -- =======================================================================
