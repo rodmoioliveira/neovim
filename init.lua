@@ -237,6 +237,17 @@ require("lazy").setup({
       }
     end
   },
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
 
   -- =======================================================================
   -- Completions
@@ -262,7 +273,15 @@ require("lazy").setup({
         nerd_font_variant = 'mono'
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+        providers = {
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            -- make lazydev completions top priority (see `:h blink.cmp`)
+            score_offset = 100,
+          },
+        },
       },
     },
     opts_extend = { "sources.default" }
@@ -303,6 +322,7 @@ require("lazy").setup({
       require("fidget").setup({})
       require("mason").setup()
       require("mason-lspconfig").setup({
+        automatic_installation = true,
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
@@ -379,11 +399,14 @@ vim.cmd(':FzfLua setup_fzfvim_cmds')
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- :h CTRL-L-default
 
 -- wrap and list
+---@diagnostic disable-next-line: missing-fields
 vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle wrap
+---@diagnostic disable-next-line: missing-fields
 vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle list
 
 -- diagnostics
 -- vim.keymap.set('n', '<C-W>d', vim.diagnostic.open_float, { noremap = true, unique = true, silent = false }) -- :h CTRL-W_d-default
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, unique = true, silent = false }) -- :h [d-default
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap = true, unique = true, silent = false }) -- :h ]d-default
+---@diagnostic disable-next-line: missing-fields
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { noremap = true, unique = true, silent = false })
