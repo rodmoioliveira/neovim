@@ -279,38 +279,6 @@ require("lazy").setup({
         highlight_ns = vim.api.nvim_create_namespace('blink_cmp'),
         use_nvim_cmp_as_default = true,
         nerd_font_variant = 'mono',
-        kind_icons = {
-          Text = 'T',
-          Method = 'M',
-          Function = 'F',
-          Constructor = 'C',
-
-          Field = 'f',
-          Variable = 'v',
-          Property = 'p',
-
-          Class = 'c',
-          Interface = 'i',
-          Struct = 's',
-          Module = 'm',
-
-          Unit = 'u',
-          Value = 'v',
-          Enum = 'e',
-          EnumMember = 'e',
-
-          Keyword = 'k',
-          Constant = 'c',
-
-          Snippet = 's',
-          Color = 'c',
-          File = 'f',
-          Reference = 'r',
-          Folder = 'f',
-          Event = 'r',
-          Operator = 'o',
-          TypeParameter = 't',
-        },
       },
       sources = {
         default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
