@@ -1,4 +1,15 @@
 -- =======================================================================
+-- Utils
+-- =======================================================================
+function Map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true, unique = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
+end
+
+-- =======================================================================
 -- Bootstrap lazy.nvim
 -- =======================================================================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -255,7 +266,7 @@ require("lazy").setup({
   {
     'saghen/blink.cmp',
     event = { "LspAttach" },
-    dependencies = 'rafamadriz/friendly-snippets',
+    dependencies = { 'rafamadriz/friendly-snippets', 'nvim-tree/nvim-web-devicons' },
     version = '*',
     opts = {
       completion = {
@@ -269,8 +280,41 @@ require("lazy").setup({
       -- https://cmp.saghen.dev/configuration/keymap.html#default
       keymap = { preset = 'default' },
       appearance = {
+        highlight_ns = vim.api.nvim_create_namespace('blink_cmp'),
         use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'mono'
+        nerd_font_variant = 'mono',
+        kind_icons = {
+          Text = 'T',
+          Method = 'M',
+          Function = 'F',
+          Constructor = 'C',
+
+          Field = 'f',
+          Variable = 'v',
+          Property = 'p',
+
+          Class = 'c',
+          Interface = 'i',
+          Struct = 's',
+          Module = 'm',
+
+          Unit = 'u',
+          Value = 'v',
+          Enum = 'e',
+          EnumMember = 'e',
+
+          Keyword = 'k',
+          Constant = 'c',
+
+          Snippet = 's',
+          Color = 'c',
+          File = 'f',
+          Reference = 'r',
+          Folder = 'f',
+          Event = 'r',
+          Operator = 'o',
+          TypeParameter = 't',
+        },
       },
       sources = {
         default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
@@ -396,17 +440,28 @@ vim.cmd(':FzfLua setup_fzfvim_cmds')
 -- Please check out the default-mappings in :h default-mappings
 -- =======================================================================
 -- search
--- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, unique = true, silent = false }) -- :h CTRL-L-default
+-- Map('n', '<leader>h', ':nohlsearch<CR>') -- :h CTRL-L-default
 
 -- wrap and list
----@diagnostic disable-next-line: missing-fields
-vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle wrap
----@diagnostic disable-next-line: missing-fields
-vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, unique = true, silent = false }) -- Toggle list
+Map("n", "<leader>w", ":set wrap!<CR>") -- Toggle wrap
+Map("n", "<leader>l", ":set list!<CR>") -- Toggle list
 
 -- diagnostics
--- vim.keymap.set('n', '<C-W>d', vim.diagnostic.open_float, { noremap = true, unique = true, silent = false }) -- :h CTRL-W_d-default
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, unique = true, silent = false }) -- :h [d-default
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap = true, unique = true, silent = false }) -- :h ]d-default
----@diagnostic disable-next-line: missing-fields
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { noremap = true, unique = true, silent = false })
+-- Map('n', '<C-W>d', vim.diagnostic.open_float) -- :h CTRL-W_d-default
+-- Map('n', '[d', vim.diagnostic.goto_prev) -- :h [d-default
+-- Map('n', ']d', vim.diagnostic.goto_next) -- :h ]d-default
+Map('n', '<leader>q', vim.diagnostic.setloclist)
+
+-- move text on visual mode
+Map("v", "J", ":m '>+1<CR>gv=gv")
+Map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- buffers
+Map("n", "<TAB>", ":bn<CR>")
+Map("n", "<S-TAB>", ":bp<CR>")
+
+-- center screen on search and screen movement
+Map("n", "<C-d>", "<C-d>zz")
+Map("n", "<C-u>", "<C-u>zz")
+Map("n", "n", "nzzzv")
+Map("n", "N", "Nzzzv")
