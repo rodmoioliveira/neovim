@@ -103,6 +103,11 @@ vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VI
 -- =======================================================================
 require("lazy").setup({
   {
+    "ravibrock/spellwarn.nvim",
+    event = "VeryLazy",
+    config = true,
+  },
+  {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function() require("fzf-lua").setup({}) end,
