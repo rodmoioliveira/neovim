@@ -1,17 +1,30 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.4.1](https://github.com/rodmoioliveira/neovim/compare/0.4.0...0.4.1) - 2024-12-26
+## [0.5.0](https://github.com/rodmoioliveira/neovim/compare/0.4.1...0.5.0) - 2025-01-02
 
-[58f68be](https://github.com/rodmoioliveira/neovim/commit/58f68be9f2c277078d7d5631e27d193032f735b6)...[0334df6](https://github.com/rodmoioliveira/neovim/commit/0334df6ac0eb1357ac6f94c130d5e8d49294573f)
+[cd1e596](https://github.com/rodmoioliveira/neovim/commit/cd1e59640b70a1d80948b272a2a7ddc4704bac7b)...[81a908d](https://github.com/rodmoioliveira/neovim/commit/81a908d4d1421f96d397485022513b4153f6a61c)
 
 ### Features
 
-- [0334df6](https://github.com/rodmoioliveira/neovim/commit/0334df6ac0eb1357ac6f94c130d5e8d49294573f) - Feat: Add nvim_create_autocmd TextYankPost
+- [81a908d](https://github.com/rodmoioliveira/neovim/commit/81a908d4d1421f96d397485022513b4153f6a61c) - Feat: Add plugin ravibrock/spellwarn.nvim
+
+### Miscellaneous Tasks
+
+- [e9c1601](https://github.com/rodmoioliveira/neovim/commit/e9c1601f222c366a7f1636d08b6dd661d1e98ffc) - Chore: Update plugins
+- [780b980](https://github.com/rodmoioliveira/neovim/commit/780b98094933fdc6f81f951943905627518c2c98) - Chore: Add EnableWhitespace on startup
+
+## [0.4.1](https://github.com/rodmoioliveira/neovim/compare/0.4.0...0.4.1) - 2024-12-26
+
+[bf15343](https://github.com/rodmoioliveira/neovim/commit/bf1534359b700ecdeeb53187f4403692555b8ab7)...[cd1e596](https://github.com/rodmoioliveira/neovim/commit/cd1e59640b70a1d80948b272a2a7ddc4704bac7b)
+
+### Features
+
+- [c56d6ec](https://github.com/rodmoioliveira/neovim/commit/c56d6ec888638711d1b7b423d3b068d24b08ef19) - Feat: Add nvim_create_autocmd TextYankPost
 
 ## [0.4.0](https://github.com/rodmoioliveira/neovim/compare/0.3.2...0.4.0) - 2024-12-26
 
-[87910d3](https://github.com/rodmoioliveira/neovim/commit/87910d3a5a46a99881589340f96877e0bf54ba6b)...[58f68be](https://github.com/rodmoioliveira/neovim/commit/58f68be9f2c277078d7d5631e27d193032f735b6)
+[87910d3](https://github.com/rodmoioliveira/neovim/commit/87910d3a5a46a99881589340f96877e0bf54ba6b)...[bf15343](https://github.com/rodmoioliveira/neovim/commit/bf1534359b700ecdeeb53187f4403692555b8ab7)
 
 ### Bug Fixes
 
@@ -27,23 +40,23 @@ All notable changes to this project will be documented in this file.
 - [9db8854](https://github.com/rodmoioliveira/neovim/commit/9db8854736c5389818ded38d37c2a9f70516bf00) - Feat: remove which-key plugin
 - [b9d0987](https://github.com/rodmoioliveira/neovim/commit/b9d098707f0011a23eff2fd7149c560fdf451409) - Feat: remove tsserver
 - [bf60ba8](https://github.com/rodmoioliveira/neovim/commit/bf60ba8c4a66fdade712a64cded743836c4864b8) - Feat: add tpope/vim-surround
-- [fb922b4](https://github.com/rodmoioliveira/neovim/commit/fb922b49092fe27b3dcb9ca4712cf421c5e4b867) - Feat: Add hardtime
-- [610d1b8](https://github.com/rodmoioliveira/neovim/commit/610d1b81bedbbf6648df92cdf7b115963c7ad475) - Feat: Switch tab for buffers in mappings
-- [7b18a84](https://github.com/rodmoioliveira/neovim/commit/7b18a841bbf2b627dcb3685003a6126e217371ca) - Feat!: Remove maps
-- [e472358](https://github.com/rodmoioliveira/neovim/commit/e4723582e6535a5c26efbbee46d9e42e5b44632c) - Feat: add Lazy.nvim
-- [b7a946b](https://github.com/rodmoioliveira/neovim/commit/b7a946b022c0e32e323c17161a0e29b13e85b701) - Feat: Remove old plugins
-- [1462cc3](https://github.com/rodmoioliveira/neovim/commit/1462cc3db8a7f4acd26a12024ccd1ac86faa33ac) - Feat: Add Lsp
-- [f1c9c3f](https://github.com/rodmoioliveira/neovim/commit/f1c9c3f6bfb26dcfa4016fcc5df600411349b240) - Feat: Add all configs in one file
-- [83a0fd5](https://github.com/rodmoioliveira/neovim/commit/83a0fd51cbc46159a2a8d7bc16c9b896d4349272) - Feat: Add lualine configs
-- [ede39a0](https://github.com/rodmoioliveira/neovim/commit/ede39a0f2205dab627ca49efe7fd99f17d0c0e2c) - Feat: Remove tpope/vim-commentary
-- [d2d9f49](https://github.com/rodmoioliveira/neovim/commit/d2d9f499c2204d95137bfe8e8d2e84612b1a8ef7) - Feat: Improve completions
-- [807c066](https://github.com/rodmoioliveira/neovim/commit/807c066ad160ef90c8f9b90a3800167f87c4033c) - Feat: Remove lsp-zero and lazy-lsp
-- [9fc4d7f](https://github.com/rodmoioliveira/neovim/commit/9fc4d7fef40e60296887a338ca43d9884420f9e5) - Feat: Replace "hrsh7th/cmp-*" for "saghen/blink"
-- [579d8b1](https://github.com/rodmoioliveira/neovim/commit/579d8b1d9796825d2d7e68c7bb56fa2c3365d386) - Feat: Add folke/lazydev.nvim
-- [00c3ccd](https://github.com/rodmoioliveira/neovim/commit/00c3ccdff4d6848eb41ff435dab9411a20a54c0f) - Feat: Improve mappings
-- [0e2cc8a](https://github.com/rodmoioliveira/neovim/commit/0e2cc8aca345547ca08eedc98bc035572719391d) - Feat: Remove kind_icons
-- [e9f5e28](https://github.com/rodmoioliveira/neovim/commit/e9f5e28413ccb5438c84092fefa47856b445a420) - Feat: Improve Makefile
-- [58f68be](https://github.com/rodmoioliveira/neovim/commit/58f68be9f2c277078d7d5631e27d193032f735b6) - Feat: Add resize windows maps
+- [425ce2e](https://github.com/rodmoioliveira/neovim/commit/425ce2eded1dc6b7f0033dadb0240ea332be7268) - Feat: Add hardtime
+- [1abb748](https://github.com/rodmoioliveira/neovim/commit/1abb7486f29c24b03533f2517f7140e3828f89ab) - Feat: Switch tab for buffers in mappings
+- [6ac8822](https://github.com/rodmoioliveira/neovim/commit/6ac8822919d5245d88e54714eb0d6554edb781fd) - Feat!: Remove maps
+- [e9d4bd6](https://github.com/rodmoioliveira/neovim/commit/e9d4bd675d6d2468e59ca23b308ff22bb98e7533) - Feat: add Lazy.nvim
+- [4c22329](https://github.com/rodmoioliveira/neovim/commit/4c22329a41da164af19b646bd210f2ecc50ad5c3) - Feat: Remove old plugins
+- [ac445bc](https://github.com/rodmoioliveira/neovim/commit/ac445bc5fba10ab0c95c2445b38a0d6aa20c53d6) - Feat: Add Lsp
+- [5b25ac7](https://github.com/rodmoioliveira/neovim/commit/5b25ac7e5f8da273f6202a63f638a28f3dfeca28) - Feat: Add all configs in one file
+- [7f34d47](https://github.com/rodmoioliveira/neovim/commit/7f34d472dbbc409ba1479e054c4db272e6b79f27) - Feat: Add lualine configs
+- [c6ebeae](https://github.com/rodmoioliveira/neovim/commit/c6ebeaee4c4985589806d32a34505050feb04a1a) - Feat: Remove tpope/vim-commentary
+- [e676f95](https://github.com/rodmoioliveira/neovim/commit/e676f95d7b1d739a62b2210a01c83c9ee1342dad) - Feat: Improve completions
+- [cfe474b](https://github.com/rodmoioliveira/neovim/commit/cfe474b3c48b80d2a59f28ae4684934f661e5372) - Feat: Remove lsp-zero and lazy-lsp
+- [4d5ece0](https://github.com/rodmoioliveira/neovim/commit/4d5ece00d078a37f8c541d80170eff768cf74c61) - Feat: Replace "hrsh7th/cmp-*" for "saghen/blink"
+- [16d68e9](https://github.com/rodmoioliveira/neovim/commit/16d68e978403f75bd1ac3d1098e6fab5f7263a9e) - Feat: Add folke/lazydev.nvim
+- [03efee5](https://github.com/rodmoioliveira/neovim/commit/03efee5d6b023cef5546172580d67a68e7693661) - Feat: Improve mappings
+- [edf77c8](https://github.com/rodmoioliveira/neovim/commit/edf77c8726758e9da8feee4eced98e584080b6ef) - Feat: Remove kind_icons
+- [ec127ed](https://github.com/rodmoioliveira/neovim/commit/ec127ed9282f7364d0daaa211f31c0550b1ad300) - Feat: Improve Makefile
+- [4c7ddfc](https://github.com/rodmoioliveira/neovim/commit/4c7ddfccd32128bb1a611169f1e66e437e595d6d) - Feat: Add resize windows maps
 
 ### Miscellaneous Tasks
 
@@ -56,13 +69,13 @@ All notable changes to this project will be documented in this file.
 - [72d39c2](https://github.com/rodmoioliveira/neovim/commit/72d39c22008ee58ccc9dfd23ebb6d50a8ede7635) - Chore: remove Markdown preview plugin
 - [ee08c12](https://github.com/rodmoioliveira/neovim/commit/ee08c1201e05ccc693bc8689878ce9ad3298885a) - Chore: install jsregexp
 - [ff2b177](https://github.com/rodmoioliveira/neovim/commit/ff2b1776264e11d7660d4ed403e6cec40c29993b) - Chore: add TODO to add github.com/dcmox/ascii-icons
-- [7b0c698](https://github.com/rodmoioliveira/neovim/commit/7b0c69883d6e33d79d47777991824cb806aeee4a) - Chore: Replace vim.keymap.set for Map()
+- [02030b3](https://github.com/rodmoioliveira/neovim/commit/02030b34509a1bf14c179088f625d4e7c5c7ec67) - Chore: Replace vim.keymap.set for Map()
 
 ### Other
 
-- [8cebd9a](https://github.com/rodmoioliveira/neovim/commit/8cebd9acd73c93dd531863b294f08bad6f0acb59) - Feat: Add diagnostics remaps
-- [b245020](https://github.com/rodmoioliveira/neovim/commit/b245020895355265615a9a1d5262d3daa7dbe1b4) - Feat: add default-mappings
-- [14189b3](https://github.com/rodmoioliveira/neovim/commit/14189b3ce86e91b850153966b22a05aa9917b67c) - Feat: Add fzf-lua-coming-from-fzf.vim?
+- [ff34312](https://github.com/rodmoioliveira/neovim/commit/ff34312e8a6ee6642b271bbfd6933e7c731a76de) - Feat: Add diagnostics remaps
+- [f6377fa](https://github.com/rodmoioliveira/neovim/commit/f6377fa7389bca5aac6d63eaa2ba81e8a364edf2) - Feat: add default-mappings
+- [e767ec3](https://github.com/rodmoioliveira/neovim/commit/e767ec391efedac3139afc7d247f39c83b106754) - Feat: Add fzf-lua-coming-from-fzf.vim?
 
 ## [0.3.2](https://github.com/rodmoioliveira/neovim/compare/0.3.1...0.3.2) - 2023-01-11
 
