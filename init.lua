@@ -387,6 +387,9 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- :h fzf-lua-coming-from-fzf.vim?
 vim.cmd(":FzfLua setup_fzfvim_cmds")
 
+-- :h better-whitespace-:EnableWhitespace
+vim.cmd(":EnableWhitespace")
+
 -- =======================================================================
 -- AutoCommands
 -- =======================================================================
