@@ -3,7 +3,9 @@
 -- =======================================================================
 function Map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true, unique = true }
-  if opts then options = vim.tbl_extend("force", options, opts) end
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
@@ -14,12 +16,18 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({
-    "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--branch=stable",
+    lazyrepo,
+    lazypath,
   })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" }, { out, "WarningMsg" },
-      { "\nPress any key to exit..." }
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
@@ -36,10 +44,10 @@ vim.opt.rtp:prepend(lazypath)
 -- =======================================================================
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.filetype.add {
+vim.filetype.add({
   extension = { tex = "tex", zir = "zir" },
-  pattern = { ["[jt]sconfig.*.json"] = "jsonc" }
-}
+  pattern = { ["[jt]sconfig.*.json"] = "jsonc" },
+})
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.backspace = "eol,start,indent"
@@ -87,43 +95,42 @@ vim.o.updatetime = 300 -- You will have bad experience for diagnostic messages w
 vim.o.visualbell = false
 vim.o.whichwrap = "b,s,<,>,h,l,[,]"
 vim.o.wildignore =
-    "*/node_modules/*,*/tmp/*,tags,*.jpg,*.png,*.pyc,*.min.js,*/dist/*,*/json/*,*/csv/*,*/target/*,node_modules,*.json,*.csv,*.txt,*.tsv"
+  "*/node_modules/*,*/tmp/*,tags,*.jpg,*.png,*.pyc,*.min.js,*/dist/*,*/json/*,*/csv/*,*/target/*,node_modules,*.json,*.csv,*.txt,*.tsv"
 vim.o.wildmenu = true -- visual autocomplete for command menu
 vim.o.wrap = true
 vim.o.writebackup = false -- Some servers have issues with backup files, see #649
 vim.opt.list = false
-vim.opt.listchars:append "eol:↴"
-vim.opt.listchars:append "space:⋅"
-vim.opt.shortmess:append "I" -- don't show the default intro message
-vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
-vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
+vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append("space:⋅")
+vim.opt.shortmess:append("I") -- don't show the default intro message
+vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
+vim.opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
 
 -- =======================================================================
 -- Setup lazy.nvim
 -- =======================================================================
 require("lazy").setup({
-  {
-    "ravibrock/spellwarn.nvim",
-    event = "VeryLazy",
-    config = true,
-  },
+  { "ravibrock/spellwarn.nvim", event = "VeryLazy", config = true },
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function() require("fzf-lua").setup({}) end,
-    opts = { "skim" }
-  }, {
+    config = function()
+      require("fzf-lua").setup({})
+    end,
+    opts = { "skim" },
+  },
+  {
     "lewis6991/gitsigns.nvim",
     opt = {},
     config = function()
-      require("gitsigns").setup {
+      require("gitsigns").setup({
         signs = {
           add = { text = "+" },
           change = { text = "~" },
           delete = { text = "-" },
           topdelete = { text = "-" },
           changedelete = { text = "~" },
-          untracked = { text = "┆" }
+          untracked = { text = "┆" },
         },
         signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
         numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
@@ -136,7 +143,7 @@ require("lazy").setup({
           virt_text = true,
           virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
           delay = 1000,
-          ignore_whitespace = false
+          ignore_whitespace = false,
         },
         current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
         sign_priority = 6,
@@ -149,7 +156,7 @@ require("lazy").setup({
           style = "minimal",
           relative = "cursor",
           row = 0,
-          col = 2
+          col = 2,
         },
         on_attach = function(bufnr)
           local gitsigns = require("gitsigns")
@@ -179,11 +186,11 @@ require("lazy").setup({
 
           -- Text object
           Map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", opts)
-        end
-      }
+        end,
+      })
 
       -- https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
-      vim.cmd [[
+      vim.cmd([[
       augroup gitsigns_colors
           autocmd!
           autocmd ColorScheme * hi DiffAdd                 gui=none    guibg=NONE       guifg=DarkOliveGreen3
@@ -195,20 +202,23 @@ require("lazy").setup({
           autocmd ColorScheme * hi GitSignsDelete          gui=none    guibg=NONE       guifg=IndianRed
           autocmd ColorScheme * hi GitSignsUntracked       gui=none    guibg=NONE       guifg=grey69
       augroup END
-      ]]
-    end
+      ]])
+    end,
   },
   {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {}
-  }, { "ntpeters/vim-better-whitespace", opt = {} },
-  { "p7g/vim-bow-wob", opt = {} }, { "tpope/vim-surround", opt = {} },
-  { "windwp/nvim-autopairs", event = "InsertEnter", config = true }, {
+    opts = {},
+  },
+  { "ntpeters/vim-better-whitespace", opt = {} },
+  { "p7g/vim-bow-wob", opt = {} },
+  { "tpope/vim-surround", opt = {} },
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("lualine").setup {
+      require("lualine").setup({
         options = {
           icons_enabled = false,
           theme = "codedark",
@@ -218,7 +228,7 @@ require("lazy").setup({
           ignore_focus = {},
           always_divide_middle = true,
           globalstatus = false,
-          refresh = { statusline = 1000, tabline = 1000, winbar = 1000 }
+          refresh = { statusline = 1000, tabline = 1000, winbar = 1000 },
         },
         sections = {
           lualine_a = { "mode" },
@@ -226,7 +236,7 @@ require("lazy").setup({
           lualine_c = { "buffers" },
           lualine_x = { "encoding", "fileformat", "filetype" },
           lualine_y = { "progress" },
-          lualine_z = { "location" }
+          lualine_z = { "location" },
         },
         inactive_sections = {
           lualine_a = {},
@@ -234,24 +244,25 @@ require("lazy").setup({
           lualine_c = { "filename" },
           lualine_x = { "location" },
           lualine_y = {},
-          lualine_z = {}
+          lualine_z = {},
         },
         tabline = {},
         winbar = {},
         inactive_winbar = {},
-        extensions = {}
-      }
-    end
-  }, {
+        extensions = {},
+      })
+    end,
+  },
+  {
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files
     opts = {
       library = {
         -- See the configuration section for more details
         -- Load luvit types when the `vim.uv` word is found
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } }
-      }
-    }
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
   }, -- =======================================================================
   -- Completions
   -- =======================================================================
@@ -259,7 +270,8 @@ require("lazy").setup({
     "saghen/blink.cmp",
     event = { "LspAttach" },
     dependencies = {
-      "rafamadriz/friendly-snippets", "nvim-tree/nvim-web-devicons"
+      "rafamadriz/friendly-snippets",
+      "nvim-tree/nvim-web-devicons",
     },
     version = "*",
     opts = {
@@ -267,7 +279,7 @@ require("lazy").setup({
         ghost_text = { enabled = true },
         list = { selection = { preselect = true, auto_insert = true } },
         menu = { border = "single" },
-        documentation = { window = { border = "single" } }
+        documentation = { window = { border = "single" } },
       },
       signature = { enabled = true, window = { border = "single" } },
 
@@ -276,7 +288,7 @@ require("lazy").setup({
       appearance = {
         highlight_ns = vim.api.nvim_create_namespace("blink_cmp"),
         use_nvim_cmp_as_default = true,
-        nerd_font_variant = "mono"
+        nerd_font_variant = "mono",
       },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
@@ -285,17 +297,20 @@ require("lazy").setup({
             name = "LazyDev",
             module = "lazydev.integrations.blink",
             -- make lazydev completions top priority (see `:h blink.cmp`)
-            score_offset = 100
-          }
-        }
-      }
+            score_offset = 100,
+          },
+        },
+      },
     },
-    opts_extend = { "sources.default" }
-  }, {
+    opts_extend = { "sources.default" },
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim",
-      "j-hui/fidget.nvim", "saghen/blink.cmp"
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "j-hui/fidget.nvim",
+      "saghen/blink.cmp",
     },
     opts = {
       servers = {
@@ -303,12 +318,12 @@ require("lazy").setup({
           settings = {
             Lua = {
               diagnostics = {
-                globals = { "vim", "it", "describe", "before_each", "after_each" }
-              }
-            }
-          }
-        }
-      }
+                globals = { "vim", "it", "describe", "before_each", "after_each" },
+              },
+            },
+          },
+        },
+      },
     },
 
     -- =======================================================================
@@ -316,9 +331,8 @@ require("lazy").setup({
     -- =======================================================================
     config = function()
       local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
-      local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol
-                                                   .make_client_capabilities(),
-                                               blink_capabilities)
+      local capabilities =
+        vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), blink_capabilities)
 
       require("fidget").setup({})
       require("mason").setup()
@@ -327,10 +341,9 @@ require("lazy").setup({
         ensure_installed = { "lua_ls", "rust_analyzer" },
         handlers = {
           function(server_name)
-            require("lspconfig")[server_name]
-                .setup { capabilities = capabilities }
-          end
-        }
+            require("lspconfig")[server_name].setup({ capabilities = capabilities })
+          end,
+        },
       })
 
       -- =======================================================================
@@ -343,9 +356,9 @@ require("lazy").setup({
             [vim.diagnostic.severity.ERROR] = "✘",
             [vim.diagnostic.severity.WARN] = "▲",
             [vim.diagnostic.severity.HINT] = "⚑",
-            [vim.diagnostic.severity.INFO] = "»"
-          }
-        }
+            [vim.diagnostic.severity.INFO] = "»",
+          },
+        },
       })
 
       -- =======================================================================
@@ -357,11 +370,10 @@ require("lazy").setup({
             noremap = true,
             unique = false,
             silent = false,
-            buffer = event.buf
+            buffer = event.buf,
           }
 
-          Map("n", "<leader>f",
-              "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+          Map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
           Map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
           Map("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
 
@@ -375,10 +387,10 @@ require("lazy").setup({
           -- Map('n', 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
           -- Map('n', 'gO', '<cmd>lua vim.lsp.buf.document_symbol()<cr>', opts)
           -- Map('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-        end
+        end,
       })
-    end
-  }
+    end,
+  },
 })
 
 -- =======================================================================
@@ -406,7 +418,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank({ higroup = "YankHighlight", timeout = 300 })
-  end
+  end,
 })
 
 -- =======================================================================

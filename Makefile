@@ -20,11 +20,26 @@ bash-fmt: ## Format bash code
 bash-lint: ## Check lint bash code
 	@find . -type f -name "*.sh" -not -path "./target/*" | xargs shellcheck -o all
 
-doc-changelog: ## Write CHANGELOG.md
-	@./scripts/doc-changelog.sh
+doc-changelog: ## Write CHANGELOG.mode
+	@git cliff -o CHANGELOG.md
+
+doc-readme: ## Write README.md
+	@./dev/doc-readme.sh
+
+dprint-check: ## Dprint check
+	@dprint check
+
+dprint-fmt: ## Dprint format
+	@dprint fmt
+
+lua-check: ## Check format lua code
+	@find . -name "*.lua" | xargs stylua -c
 
 lua-fmt: ## Format Lua code
-	@find . -name "*.lua" | xargs lua-format -i --indent-width=2 --spaces-inside-table-braces --no-align-table-field --break-after-table-lb --break-before-table-rb --single-quote-to-double-quote
+	@find . -name "*.lua" | xargs stylua
+
+makefile-descriptions: ## Check if all Makefile rules have descriptions
+	@./dev/makefile-descriptions.sh
 
 typos: ## Check typos
 	@typos
@@ -32,13 +47,18 @@ typos: ## Check typos
 typos-fix: ## Fix typos
 	@typos -w
 
-PHONY: help
-PHONY: bash-all
-PHONY: bash-check
-PHONY: bash-deps
-PHONY: bash-fmt
-PHONY: bash-lint
-PHONY: doc-changelog
-PHONY: lua-fmt
-PHONY: typos
-PHONY: typos-fix
+.PHONY: bash-all
+.PHONY: bash-check
+.PHONY: bash-deps
+.PHONY: bash-fmt
+.PHONY: bash-lint
+.PHONY: doc-changelog
+.PHONY: doc-readme
+.PHONY: dprint-check
+.PHONY: dprint-fmt
+.PHONY: help
+.PHONY: lua-check
+.PHONY: lua-fmt
+.PHONY: makefile-descriptions
+.PHONY: typos
+.PHONY: typos-fix
