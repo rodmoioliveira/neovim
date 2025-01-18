@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0](https://github.com/rodmoioliveira/neovim/compare/0.5.0...0.6.0) - 2025-01-18
+
+[81a908d](https://github.com/rodmoioliveira/neovim/commit/81a908d4d1421f96d397485022513b4153f6a61c)...[b32fd43](https://github.com/rodmoioliveira/neovim/commit/b32fd43bf3deb2b22e2d76251a7d4cb747c36c3c)
+
+### Bug Fixes
+
+- [6044593](https://github.com/rodmoioliveira/neovim/commit/60445934b25703fab6255fa937b0be7f1c34ae13) - Fix: Add LC_ALL=C to sort
+
+### CI
+
+- [e6914e3](https://github.com/rodmoioliveira/neovim/commit/e6914e32a613fad6fb895e0053a4040f88a35fa8) - Ci: Update help recipe in Makefile
+- [b32fd43](https://github.com/rodmoioliveira/neovim/commit/b32fd43bf3deb2b22e2d76251a7d4cb747c36c3c) - Ci: Add dprint step
+
+### Miscellaneous Tasks
+
+- [9e3c25c](https://github.com/rodmoioliveira/neovim/commit/9e3c25c0cb3b4dc0c06c10f79c7d35c810145139) - Chore: Update spell
+- [93c2997](https://github.com/rodmoioliveira/neovim/commit/93c299765475601f4ab6f0a0134faef172903be1) - Chore: Update blink.cmp
+
 ## [0.5.0](https://github.com/rodmoioliveira/neovim/compare/0.4.1...0.5.0) - 2025-01-02
 
 [cd1e596](https://github.com/rodmoioliveira/neovim/commit/cd1e59640b70a1d80948b272a2a7ddc4704bac7b)...[81a908d](https://github.com/rodmoioliveira/neovim/commit/81a908d4d1421f96d397485022513b4153f6a61c)

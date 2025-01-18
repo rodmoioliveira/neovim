@@ -27,6 +27,7 @@ doc-readme             Write README.md
 dprint-check           Dprint check
 dprint-fmt             Dprint format
 help                   Display this help screen
+lua-check              Check format lua code
 lua-fmt                Format Lua code
 makefile-descriptions  Check if all Makefile rules have descriptions
 typos                  Check typos
