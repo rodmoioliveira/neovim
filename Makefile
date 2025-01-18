@@ -2,9 +2,9 @@
 
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
-		awk 'BEGIN {FS = ":.*?## "}; \
-		{printf "%-20s %s\n", $$1, $$2}' | \
-		LC_ALL=C sort
+		sed -E 's/:.+## /@/g' | \
+		LC_ALL=C sort -t@ -k1,1 | \
+		column -s@ -t
 
 bash-all: bash-fmt bash-check bash-lint ## Run all bash tests
 
