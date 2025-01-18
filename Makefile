@@ -20,7 +20,7 @@ bash-fmt: ## Format bash code
 bash-lint: ## Check lint bash code
 	@find . -type f -name "*.sh" -not -path "./target/*" | xargs shellcheck -o all
 
-doc-changelog: ## Write CHANGELOG.mode
+doc-changelog: ## Write CHANGELOG.md
 	@git cliff -o CHANGELOG.md
 
 doc-readme: ## Write README.md

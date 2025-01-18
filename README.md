@@ -22,7 +22,7 @@ bash-check             Check format bash code
 bash-deps              Install bash dependencies
 bash-fmt               Format bash code
 bash-lint              Check lint bash code
-doc-changelog          Write CHANGELOG.mode
+doc-changelog          Write CHANGELOG.md
 doc-readme             Write README.md
 dprint-check           Dprint check
 dprint-fmt             Dprint format
