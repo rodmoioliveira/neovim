@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0](https://github.com/rodmoioliveira/neovim/compare/0.6.0...0.7.0) - 2025-01-24
+
+[b32fd43](https://github.com/rodmoioliveira/neovim/commit/b32fd43bf3deb2b22e2d76251a7d4cb747c36c3c)...[5dfbb01](https://github.com/rodmoioliveira/neovim/commit/5dfbb0140677ce9736b12de67c72f21fab2597e2)
+
+### CI
+
+- [6462157](https://github.com/rodmoioliveira/neovim/commit/64621575b1a0799db59310935c4b5ddfe3a10e75) - Ci: Add dependabot
+
+### Documentation
+
+- [fe38216](https://github.com/rodmoioliveira/neovim/commit/fe382160db4c7089a075aefa07e018d6f3c0404c) - Doc: Fix typo in Makefile
+
+### Features
+
+- [5dfbb01](https://github.com/rodmoioliveira/neovim/commit/5dfbb0140677ce9736b12de67c72f21fab2597e2) - Feat: Add hacker gh-page theme
+
+### Miscellaneous Tasks
+
+- [1da9776](https://github.com/rodmoioliveira/neovim/commit/1da97768f3acd96cdce520273363437dc0ed499a) - Chore: Rename HOW_TO_RELEASE to RELEASE
+
 ## [0.6.0](https://github.com/rodmoioliveira/neovim/compare/0.5.0...0.6.0) - 2025-01-18
 
 [81a908d](https://github.com/rodmoioliveira/neovim/commit/81a908d4d1421f96d397485022513b4153f6a61c)...[b32fd43](https://github.com/rodmoioliveira/neovim/commit/b32fd43bf3deb2b22e2d76251a7d4cb747c36c3c)
