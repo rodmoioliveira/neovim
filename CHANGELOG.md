@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0](https://github.com/rodmoioliveira/neovim/compare/0.7.0...0.8.0) - 2025-02-05
+
+[5dfbb01](https://github.com/rodmoioliveira/neovim/commit/5dfbb0140677ce9736b12de67c72f21fab2597e2)...[1e7f738](https://github.com/rodmoioliveira/neovim/commit/1e7f738f3b6f0fd5ef25333d99d0bc25cb3aca2a)
+
+### Miscellaneous Tasks
+
+- [061f5ee](https://github.com/rodmoioliveira/neovim/commit/061f5eeec3029086b728d4ec951a7e675a00e622) - Chore: Remove hacker gh-page theme
+- [1e7f738](https://github.com/rodmoioliveira/neovim/commit/1e7f738f3b6f0fd5ef25333d99d0bc25cb3aca2a) - Chore: Update Lazy
+
 ## [0.7.0](https://github.com/rodmoioliveira/neovim/compare/0.6.0...0.7.0) - 2025-01-24
 
 [b32fd43](https://github.com/rodmoioliveira/neovim/commit/b32fd43bf3deb2b22e2d76251a7d4cb747c36c3c)...[5dfbb01](https://github.com/rodmoioliveira/neovim/commit/5dfbb0140677ce9736b12de67c72f21fab2597e2)
