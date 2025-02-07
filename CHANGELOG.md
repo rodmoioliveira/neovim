@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0](https://github.com/rodmoioliveira/neovim/compare/0.8.0...0.9.0) - 2025-02-07
+
+[1e7f738](https://github.com/rodmoioliveira/neovim/commit/1e7f738f3b6f0fd5ef25333d99d0bc25cb3aca2a)...[5ded64b](https://github.com/rodmoioliveira/neovim/commit/5ded64bb5427f51f171cb9e75f39da72efd6af3c)
+
+### CI
+
+- [1d45890](https://github.com/rodmoioliveira/neovim/commit/1d4589082b22d7d686093586d9462f41377a4d5c) - Ci: Remove webi.sh
+
+### Features
+
+- [5ded64b](https://github.com/rodmoioliveira/neovim/commit/5ded64bb5427f51f171cb9e75f39da72efd6af3c) - Feat: Set statuscolumn
+
 ## [0.8.0](https://github.com/rodmoioliveira/neovim/compare/0.7.0...0.8.0) - 2025-02-05
 
 [5dfbb01](https://github.com/rodmoioliveira/neovim/commit/5dfbb0140677ce9736b12de67c72f21fab2597e2)...[1e7f738](https://github.com/rodmoioliveira/neovim/commit/1e7f738f3b6f0fd5ef25333d99d0bc25cb3aca2a)
