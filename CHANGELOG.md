@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.10.0](https://github.com/rodmoioliveira/neovim/compare/0.9.0...0.10.0) - 2025-02-13
+
+[5ded64b](https://github.com/rodmoioliveira/neovim/commit/5ded64bb5427f51f171cb9e75f39da72efd6af3c)...[28a30d2](https://github.com/rodmoioliveira/neovim/commit/28a30d21a01454b1df6a5d6cc5ea3ceaa6b9f33b)
+
+### CI
+
+- [00d4452](https://github.com/rodmoioliveira/neovim/commit/00d4452834c635c561d5eccec4700265bdedf185) - Ci: Fix stylua
+
+### Other
+
+- [28a30d2](https://github.com/rodmoioliveira/neovim/commit/28a30d21a01454b1df6a5d6cc5ea3ceaa6b9f33b) - Deps: Update Lazy
+
 ## [0.9.0](https://github.com/rodmoioliveira/neovim/compare/0.8.0...0.9.0) - 2025-02-07
 
 [1e7f738](https://github.com/rodmoioliveira/neovim/commit/1e7f738f3b6f0fd5ef25333d99d0bc25cb3aca2a)...[5ded64b](https://github.com/rodmoioliveira/neovim/commit/5ded64bb5427f51f171cb9e75f39da72efd6af3c)
