@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.11.0](https://github.com/rodmoioliveira/neovim/compare/0.10.0...0.11.0) - 2025-02-16
+
+[28a30d2](https://github.com/rodmoioliveira/neovim/commit/28a30d21a01454b1df6a5d6cc5ea3ceaa6b9f33b)...[45cf793](https://github.com/rodmoioliveira/neovim/commit/45cf793ee635e5c29c47376a6843f817851f26cd)
+
+### Other
+
+- [45cf793](https://github.com/rodmoioliveira/neovim/commit/45cf793ee635e5c29c47376a6843f817851f26cd) - Deps: Update Lazy
+
 ## [0.10.0](https://github.com/rodmoioliveira/neovim/compare/0.9.0...0.10.0) - 2025-02-13
 
 [5ded64b](https://github.com/rodmoioliveira/neovim/commit/5ded64bb5427f51f171cb9e75f39da72efd6af3c)...[28a30d2](https://github.com/rodmoioliveira/neovim/commit/28a30d21a01454b1df6a5d6cc5ea3ceaa6b9f33b)
