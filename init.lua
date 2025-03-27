@@ -99,6 +99,7 @@ vim.o.whichwrap = "b,s,<,>,h,l,[,]"
 vim.o.wildignore =
   "*/node_modules/*,*/tmp/*,tags,*.jpg,*.png,*.pyc,*.min.js,*/dist/*,*/json/*,*/csv/*,*/target/*,node_modules,*.json,*.csv,*.txt,*.tsv"
 vim.o.wildmenu = true -- visual autocomplete for command menu
+vim.o.winborder = "rounded"
 vim.o.wrap = true
 vim.o.writebackup = false -- Some servers have issues with backup files, see #649
 vim.opt.list = false
