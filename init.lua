@@ -214,6 +214,7 @@ require("lazy").setup({
     opts = {},
   },
   { "ntpeters/vim-better-whitespace", opt = {} },
+  { "norcalli/nvim-colorizer.lua", opt = {} },
   { "p7g/vim-bow-wob", opt = {} },
   { "tpope/vim-surround", opt = {} },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
