@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.12.0](https://github.com/rodmoioliveira/neovim/compare/0.11.0...0.12.0) - 2025-06-01
+
+[45cf793](https://github.com/rodmoioliveira/neovim/commit/45cf793ee635e5c29c47376a6843f817851f26cd)...[69cc992](https://github.com/rodmoioliveira/neovim/commit/69cc9923dd2cb13eb4738719aa014d4f69a35a98)
+
+### CI
+
+- [a4345ca](https://github.com/rodmoioliveira/neovim/commit/a4345ca9907309600e947f44d2fa6271b4684c46) - Ci: Change schedule
+
+### Features
+
+- [18a96fa](https://github.com/rodmoioliveira/neovim/commit/18a96fa317f65d6555b6211400c70e10939aaaee) - Feat: Update plugins
+- [ba1b13c](https://github.com/rodmoioliveira/neovim/commit/ba1b13c7b828cbbbcf1d6b1a98a514a6eab92a82) - Feat: Add virtual_text = true to diagnostic configs
+- [ef2d19b](https://github.com/rodmoioliveira/neovim/commit/ef2d19bff0c4f2b47f5d5ec404d6d80d9c792c1a) - Feat: Update plugins
+- [69cc992](https://github.com/rodmoioliveira/neovim/commit/69cc9923dd2cb13eb4738719aa014d4f69a35a98) - Feat: Add norcalli/nvim-colorizer
+
+### Miscellaneous Tasks
+
+- [770eae7](https://github.com/rodmoioliveira/neovim/commit/770eae7c1e5079bfc4ef1592b2cf2a21655e098f) - Chore: Add winborder option
+
 ## [0.11.0](https://github.com/rodmoioliveira/neovim/compare/0.10.0...0.11.0) - 2025-02-16
 
 [28a30d2](https://github.com/rodmoioliveira/neovim/commit/28a30d21a01454b1df6a5d6cc5ea3ceaa6b9f33b)...[45cf793](https://github.com/rodmoioliveira/neovim/commit/45cf793ee635e5c29c47376a6843f817851f26cd)
