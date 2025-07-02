@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.13.0](https://github.com/rodmoioliveira/neovim/compare/0.12.0...0.13.0) - 2025-07-02
+
+[69cc992](https://github.com/rodmoioliveira/neovim/commit/69cc9923dd2cb13eb4738719aa014d4f69a35a98)...[e09329b](https://github.com/rodmoioliveira/neovim/commit/e09329bc077f6aa78f3dbeb433e4aea386bf25de)
+
+### CI
+
+- [e09329b](https://github.com/rodmoioliveira/neovim/commit/e09329bc077f6aa78f3dbeb433e4aea386bf25de) - Ci: Add automatic_enable to mason-lspconfig
+
+### Features
+
+- [f13cb8e](https://github.com/rodmoioliveira/neovim/commit/f13cb8e2c9697d13f2e158aacd3d52cc49c487aa) - Feat: Update plugins
+
+### Miscellaneous Tasks
+
+- [7f28dc5](https://github.com/rodmoioliveira/neovim/commit/7f28dc500acf03f9fd969130824b286773af6ad6) - Chore(deps): bump dprint/check from 2.2 to 2.3
+
 ## [0.12.0](https://github.com/rodmoioliveira/neovim/compare/0.11.0...0.12.0) - 2025-06-01
 
 [45cf793](https://github.com/rodmoioliveira/neovim/commit/45cf793ee635e5c29c47376a6843f817851f26cd)...[69cc992](https://github.com/rodmoioliveira/neovim/commit/69cc9923dd2cb13eb4738719aa014d4f69a35a98)
