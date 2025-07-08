@@ -118,7 +118,7 @@ require("lazy").setup({
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("fzf-lua").setup({})
+      require("fzf-lua").setup({ "max-perf" })
     end,
     opts = { "skim" },
   },
@@ -215,7 +215,6 @@ require("lazy").setup({
   },
   { "ntpeters/vim-better-whitespace", opt = {} },
   { "norcalli/nvim-colorizer.lua", opt = {} },
-  { "p7g/vim-bow-wob", opt = {} },
   { "tpope/vim-surround", opt = {} },
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
   {
@@ -225,7 +224,7 @@ require("lazy").setup({
       require("lualine").setup({
         options = {
           icons_enabled = false,
-          theme = "codedark",
+          theme = "auto",
           component_separators = { left = "|", right = "|" },
           section_separators = { left = "", right = "" },
           disabled_filetypes = { statusline = {}, winbar = {} },
@@ -397,6 +396,7 @@ require("lazy").setup({
       })
     end,
   },
+  { "p7g/vim-bow-wob", opt = {} },
 })
 
 -- =======================================================================
