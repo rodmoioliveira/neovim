@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.14.0](https://github.com/rodmoioliveira/neovim/compare/0.13.0...0.14.0) - 2025-10-23
+
+[e09329b](https://github.com/rodmoioliveira/neovim/commit/e09329bc077f6aa78f3dbeb433e4aea386bf25de)...[86e7dae](https://github.com/rodmoioliveira/neovim/commit/86e7dae1e4afb19510d6248b58c54bf1ed0418b2)
+
+### Miscellaneous Tasks
+
+- [0e7720f](https://github.com/rodmoioliveira/neovim/commit/0e7720ffcd6423beacc86b10b67931844175a2fc) - Chore: Update lazy plugins
+- [aa70662](https://github.com/rodmoioliveira/neovim/commit/aa706626278fcfdf772ccfc23eed1e17f50393e8) - Chore(deps): bump actions/checkout from 4 to 5
+- [5ce6164](https://github.com/rodmoioliveira/neovim/commit/5ce616443ce26c831d7d7044cfca610998b52ccc) - Chore: Update lazy plugins
+- [584844e](https://github.com/rodmoioliveira/neovim/commit/584844ee23f67a5b6fd4dd60ec5d66fd470b8b5e) - Chore: Update plugins
+- [86e7dae](https://github.com/rodmoioliveira/neovim/commit/86e7dae1e4afb19510d6248b58c54bf1ed0418b2) - Chore: Remove hardtime plugin
+
 ## [0.13.0](https://github.com/rodmoioliveira/neovim/compare/0.12.0...0.13.0) - 2025-07-02
 
 [69cc992](https://github.com/rodmoioliveira/neovim/commit/69cc9923dd2cb13eb4738719aa014d4f69a35a98)...[e09329b](https://github.com/rodmoioliveira/neovim/commit/e09329bc077f6aa78f3dbeb433e4aea386bf25de)
