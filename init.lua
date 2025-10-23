@@ -208,11 +208,6 @@ require("lazy").setup({
       ]])
     end,
   },
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-  },
   { "ntpeters/vim-better-whitespace", opt = {} },
   { "norcalli/nvim-colorizer.lua", opt = {} },
   { "tpope/vim-surround", opt = {} },
